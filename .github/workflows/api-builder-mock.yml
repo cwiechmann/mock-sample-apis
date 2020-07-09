@@ -23,7 +23,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Run npm ci, npm test
-      working-directory: ${{env.workingDirectory}}
       env:
         LOG_LEVEL: INFO
         CI: true
@@ -33,8 +32,6 @@ jobs:
         npm test
   publish:
     if: github.event.action == 'published'
-    env:
-      workingDirectory: 'elk-traffic-monitor-api'
     needs: build
 
     runs-on: ubuntu-latest
