@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  api-mockup:
+    image: cwiechmann/api-mockup:latest
+    ports:
+      - 8280:8080
