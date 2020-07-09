@@ -1,0 +1,64 @@
+{
+	"schemaVersion": "4",
+	"info": {
+		"name": "findPetsByStatus"
+	},
+	"parameter": {
+		"properties": {
+			"params": {
+				"type": "object",
+				"description": "The parameters from the endpoint."
+			},
+			"request": {
+				"type": "object",
+				"description": "The HTTP request."
+			},
+			"config": {
+				"type": "object",
+				"description": "The service's configuration"
+			},
+			"env": {
+				"type": "object",
+				"description": "The host OS environment"
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"params",
+			"request",
+			"config",
+			"env"
+		]
+	},
+	"start": "http.setresponse.1",
+	"nodes": {
+		"http.setresponse.1": {
+			"type": "nodehandler://axway-flow/http",
+			"method": "setresponse",
+			"name": "Set HTTP Response",
+			"parameters": [
+				{
+					"name": "status",
+					"value": "200",
+					"type": "number",
+					"metaName": "Status",
+					"metaDescription": "The HTTP status code"
+				},
+				{
+					"name": "body",
+					"value": "[\n    {\n        \"id\": 55739188,\n        \"category\": {\n            \"id\": 58914657,\n            \"name\": \"in quis sed dolor consectetur\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"consectetur\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 8894085,\n                \"name\": \"elit ut exercitation adipisicing u\"\n            }\n        ],\n        \"status\": \"available\"\n    }\n]",
+					"type": "array",
+					"metaName": "Body",
+					"metaDescription": "The response payload"
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.response",
+					"metaName": "Next"
+				}
+			},
+			"metaMethod": "Set HTTP Response"
+		}
+	}
+}

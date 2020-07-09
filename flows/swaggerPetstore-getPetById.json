@@ -1,0 +1,64 @@
+{
+	"schemaVersion": "4",
+	"info": {
+		"name": "getPetById"
+	},
+	"parameter": {
+		"properties": {
+			"params": {
+				"type": "object",
+				"description": "The parameters from the endpoint."
+			},
+			"request": {
+				"type": "object",
+				"description": "The HTTP request."
+			},
+			"config": {
+				"type": "object",
+				"description": "The service's configuration"
+			},
+			"env": {
+				"type": "object",
+				"description": "The host OS environment"
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"params",
+			"request",
+			"config",
+			"env"
+		]
+	},
+	"start": "http.setresponse.1",
+	"nodes": {
+		"http.setresponse.1": {
+			"type": "nodehandler://axway-flow/http",
+			"method": "setresponse",
+			"name": "Set HTTP Response",
+			"parameters": [
+				{
+					"name": "status",
+					"value": "200",
+					"type": "number",
+					"metaName": "Status",
+					"metaDescription": "The HTTP status code"
+				},
+				{
+					"name": "body",
+					"value": "{\n    \"id\": 68334938,\n    \"category\": {\n        \"id\": -26602168,\n        \"name\": \"ullamco\"\n    },\n    \"name\": \"doggie\",\n    \"photoUrls\": [\n        \"aliquip elit deserunt\"\n    ],\n    \"tags\": [\n        {\n            \"id\": -87072089,\n            \"name\": \"eiusmod ut laborum\"\n        }\n    ],\n    \"status\": \"available\"\n}",
+					"type": "object",
+					"metaName": "Body",
+					"metaDescription": "The response payload"
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.response",
+					"metaName": "Next"
+				}
+			},
+			"metaMethod": "Set HTTP Response"
+		}
+	}
+}
