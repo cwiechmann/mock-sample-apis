@@ -6,4 +6,6 @@ wget -qO- https://github.com/Axway-API-Management-Plus/apim-cli/releases/downloa
 
 export JAVA_HOME=/home/ec2-user/Axway-7.7.0/apigateway/Linux.x86_64/jre
 
-./apim-cli/apim-cli-1.2.0-SNAPSHOT/scripts/apim.sh api import -h localhost -u apiadmin -p changeme -c ../apim-cli-data/petstore-v2/api-config.json
+./apim-cli/apim-cli-1.2.0-SNAPSHOT/scripts/apim.sh app import -h localhost -u apiadmin -p changeme -c $PWD/apim-cli-data/Client-App/application-config.json
+
+./apim-cli/apim-cli-1.2.0-SNAPSHOT/scripts/apim.sh api import -h localhost -u apiadmin -p changeme -c $PWD/apim-cli-data/petstore-v2/api-config.json
