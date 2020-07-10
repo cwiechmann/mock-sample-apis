@@ -3,4 +3,4 @@ services:
   api-mockup:
     image: cwiechmann/api-mockup:latest
     ports:
-      - 8280:8080
+      - 8280:8280
