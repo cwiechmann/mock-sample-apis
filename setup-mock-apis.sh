@@ -16,10 +16,10 @@ export JAVA_HOME=/home/ec2-user/Axway-7.7.0/apigateway/Linux.x86_64/jre
 
 # Import all organizations
 cd $currentDir/apim-cli-data/Organizations
-for org in *.json
+for orgDirectory in `find . -type d`
 do
-    echo "Import organization from config: $org"
-    $CLI org import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/Organizations/$org
+    echo "Import organization from config: $orgDirectory"
+    $CLI org import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/Organizations/$orgDirectory/org-config.json
 done
 
 # Import all applications
