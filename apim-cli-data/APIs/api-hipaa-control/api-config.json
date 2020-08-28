@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "Security-HIPAA-Control.json",
   "summary" : "Provides secure electronic access to health data and to remain in compliance with privacy regulations set by HHS (encryption, multi factor authentication, …)",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/api/hipaa/control/",
+  "backendBasepath" : "${BACKEND_HOST}/api/api/hipaa/control/",
   "image" : "api-image.jpg",
   "tags" : {
     "Industry" : [ "Healthcare" ],

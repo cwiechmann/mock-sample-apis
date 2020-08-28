@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "EMR-System-Patient.json",
   "summary" : "Processing electronic healthcare transactions for retrieving patient records",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/api/emr/patient",
+  "backendBasepath" : "${BACKEND_HOST}/api/api/emr/patient",
   "image" : "api-image.jpg",
   "tags" : {
     "Industry" : [ "Healthcare" ],

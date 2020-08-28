@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "EMR-System-Admissions.json",
   "summary" : "Processing electronic health transactions for managing admissions",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/api/erm/admission/",
+  "backendBasepath" : "${BACKEND_HOST}/api/api/erm/admission/",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

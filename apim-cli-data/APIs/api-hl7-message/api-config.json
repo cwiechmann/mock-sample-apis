@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "HL7-Message-Maker.json",
   "summary" : "Manage message standards for transfer of clinical and administrative data between software applications used by various healthcare providers",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/api/hl7/message/",
+  "backendBasepath" : "${BACKEND_HOST}/api/api/hl7/message/",
   "image" : "api-image.jpg",
   "tags" : {
     "Industry" : [ "Healthcare" ],

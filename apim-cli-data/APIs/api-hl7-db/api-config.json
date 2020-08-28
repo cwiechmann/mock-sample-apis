@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "HL7-Element-DB.json",
   "summary" : "Datasource access to HL7 messages",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/api/hl7/db/",
+  "backendBasepath" : "${BACKEND_HOST}/api/api/hl7/db/",
   "image" : "api-image.jpg",
   "tags" : {
     "Industry" : [ "Healthcare" ],

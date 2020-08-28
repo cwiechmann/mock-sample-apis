@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Location.json",
   "descriptionType" : "manual",
   "descriptionManual" : "Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained or accommodated. For more information: https://www.hl7.org/fhir/location.html",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/location",
+  "backendBasepath" : "${BACKEND_HOST}/api/location",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

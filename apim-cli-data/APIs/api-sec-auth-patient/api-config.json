@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "Security-PatientAuth-Service.json",
   "summary" : "Security service providing patient authentication",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/api/sec/auth/patient/",
+  "backendBasepath" : "${BACKEND_HOST}/api/api/sec/auth/patient/",
   "image" : "api-image.jpg",
   "tags" : {
     "Industry" : [ "Healthcare" ],
