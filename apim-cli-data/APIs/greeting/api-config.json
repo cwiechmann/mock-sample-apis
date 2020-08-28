@@ -6,6 +6,15 @@
   "organization" : "Axway",
   "apiDefinition" : "greeting.json",
   "backendBasepath" : "${BACKEND_HOST}/api",
+  "outboundProfiles" : {
+    "_default" : {
+      "routeType" : "policy",
+      "requestPolicy" : "Request Policy 1",
+      "responsePolicy" : "Response Policy 1",
+      "routePolicy" : "Default URL-based Routing",
+      "authenticationProfile" : "_default"
+    }
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
