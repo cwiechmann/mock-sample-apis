@@ -5,7 +5,7 @@
   "version" : "1.0.0",
   "organization" : "Axway",
   "apiDefinition" : "greeting.json",
-  "backendBasepath" : "${BACKEND_HOST}/api/greet",
+  "backendBasepath" : "${BACKEND_HOST}/api",
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
