@@ -33,5 +33,6 @@
     "name" : "FHIR - Everything Health",
     "enabled" : true,
     "state" : "approved"
-  } ]
+  } ],
+  "clientOrganizations" : [ "Partners" ]
 }

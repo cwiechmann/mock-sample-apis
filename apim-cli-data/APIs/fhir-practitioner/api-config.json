@@ -34,5 +34,5 @@
     "enabled" : true,
     "state" : "approved"
   } ],
-  "clientOrganizations" : [ "FHIR" ]
+  "clientOrganizations" : [ "Partners" ]
 }

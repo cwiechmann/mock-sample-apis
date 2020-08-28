@@ -29,7 +29,7 @@
     "Category" : [ "Clinical", " General" ],
     "Standard" : [ "FHIR" ]
   },
-  "clientOrganizations" : [ "FHIR" ],
+  "clientOrganizations" : [ "Partners" ],
   "applications" : [ {
     "name" : "FHIR - Everything Health",
     "enabled" : true,
