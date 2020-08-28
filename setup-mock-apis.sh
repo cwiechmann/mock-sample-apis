@@ -13,7 +13,7 @@ CLI=$CLI_DIR/apim-cli-$APIM_CLI_VERSION/scripts/apim.sh
 
 export JAVA_HOME=/home/ec2-user/Axway-7.7.0/apigateway/Linux.x86_64/jre
 
-export BACKEND_HOST=http://localhost:8280
+export BACKEND_HOST="http://localhost:8280"
 
 Using backend host: $BACKEND_HOST for API-Mock ups
 

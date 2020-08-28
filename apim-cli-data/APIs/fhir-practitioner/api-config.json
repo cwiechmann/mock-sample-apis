@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Practitioner.json",
   "descriptionType" : "manual",
   "descriptionManual" : "A person who is directly or indirectly involved in the provisioning of healthcare. For more information: https://www.hl7.org/fhir/practitioner.html",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/practitioner",
+  "backendBasepath" : "${BACKEND_HOST}/api/practitioner",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

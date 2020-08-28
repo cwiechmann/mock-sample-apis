@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Patient.json",
   "descriptionType" : "manual",
   "descriptionManual" : "Demographics and other administrative information about an individual or animal receiving care or other health-related services. For more information: https://www.hl7.org/fhir/patient.html",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/patient",
+  "backendBasepath" : "${BACKEND_HOST}/api/patient",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

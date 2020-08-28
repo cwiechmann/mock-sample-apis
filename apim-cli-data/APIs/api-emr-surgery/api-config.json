@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "EMR-System-Surgery.json",
   "summary" : "Processing electronic healthcare transactions for retrieving surgery availabilities",
-  "backendBasepath" : "http://${BACKEND_HOST}/api/api/emr/surgery/",
+  "backendBasepath" : "${BACKEND_HOST}/api/api/emr/surgery/",
   "image" : "api-image.jpg",
   "tags" : {
     "Industry" : [ "Healthcare" ],
