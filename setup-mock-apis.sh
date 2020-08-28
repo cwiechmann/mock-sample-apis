@@ -16,7 +16,7 @@ export JAVA_HOME=/home/ec2-user/Axway-7.7.0/apigateway/Linux.x86_64/jre
 
 # Import all organizations
 cd $currentDir/apim-cli-data/Organizations
-for orgDirectory in `find . -type d`
+for orgDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import organization from config: $orgDirectory"
     $CLI org import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/Organizations/$orgDirectory/org-config.json
@@ -24,7 +24,7 @@ done
 
 # Import all applications
 cd $currentDir/apim-cli-data/ClientApps
-for appDirectory in `find . -type d`
+for appDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import applicaton from config directory: $appDirectory"
     $CLI app import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/ClientApps/$appDirectory/application-config.json
@@ -32,7 +32,7 @@ done
 
 # Import all APIs
 cd $currentDir/apim-cli-data/APIs
-for apiDirectory in `find . -type d`
+for apiDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import API from config directory: $apiDirectory"
     $CLI api import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json
