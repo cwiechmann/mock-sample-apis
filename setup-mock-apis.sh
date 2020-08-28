@@ -15,7 +15,7 @@ export JAVA_HOME=/home/ec2-user/Axway-7.7.0/apigateway/Linux.x86_64/jre
 
 export BACKEND_HOST=http://localhost:8280
 
-Using backend host: $BACKEND_HOST for API-Mock ups
+echo "Using backend host: $BACKEND_HOST for API-Mock ups"
 
 
 # Import all organizations
@@ -39,7 +39,7 @@ cd $currentDir/apim-cli-data/APIs
 for apiDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import API from config directory: $apiDirectory"
-    $CLI api import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json
+    $CLI api import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json - force
 done
 
 exit
