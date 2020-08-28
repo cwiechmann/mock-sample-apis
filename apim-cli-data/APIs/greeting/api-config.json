@@ -5,7 +5,7 @@
   "version" : "1.0.0",
   "organization" : "Axway",
   "apiDefinition" : "greeting.json",
-  "backendBasepath" : "http://localhost:8280/api/greet",
+  "backendBasepath" : "${BACKEND_HOST}/api/greet",
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
