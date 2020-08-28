@@ -1,0 +1,30 @@
+{
+  "name" : "EMR-System-Patient",
+  "path" : "/api/emr/patient",
+  "state" : "published",
+  "version" : "3.7",
+  "organization" : "Plexus Health",
+  "apiDefinition" : "EMR-System-Patient.json",
+  "summary" : "Processing electronic healthcare transactions for retrieving patient records",
+  "backendBasepath" : "http://192.168.65.1:8280/api/api/emr/patient",
+  "image" : "api-image.jpg",
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_Amplify_PlexusHealth" ],
+    "Category" : [ "Patient" ]
+  },
+  "applications" : [ {
+    "name" : "Plexus Suite – Appointment Management",
+    "enabled" : true,
+    "state" : "approved"
+  }, {
+    "name" : "Plexus Health Center",
+    "enabled" : true,
+    "state" : "approved"
+  }, {
+    "name" : "Plexus Suite – Patient Monitoring",
+    "enabled" : true,
+    "state" : "approved"
+  } ],
+  "clientOrganizations" : [ "Plexus Health" ]
+}

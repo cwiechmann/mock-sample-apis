@@ -96,7 +96,7 @@ module.exports = {
 	// without authentication, then you can explicitly add them to `public`
 	// paths.
 	accessControl: {
-		apiPrefixSecurity: 'basic', // none | basic | apikey | ldap | plugin
+		apiPrefixSecurity: 'none', // none | basic | apikey | ldap | plugin
 		public: []
 	},
 

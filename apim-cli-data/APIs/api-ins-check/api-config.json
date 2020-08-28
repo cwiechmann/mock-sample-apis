@@ -1,0 +1,39 @@
+{
+  "name" : "INS-InsuranceCheck",
+  "path" : "/api/ins/check",
+  "state" : "published",
+  "version" : "1.3",
+  "organization" : "Plexus Health",
+  "apiDefinition" : "INS-InsuranceCheck.json",
+  "summary" : "Validate patient insurance",
+  "backendBasepath" : "http://192.168.65.1:8280/api/api/ins/check/",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_Amplify_PlexusHealth" ]
+  },
+  "applications" : [ {
+    "name" : "Plexus Suite – Appointment Management",
+    "enabled" : true,
+    "state" : "approved"
+  }, {
+    "name" : "Plexus Suite – Patient Monitoring",
+    "enabled" : true,
+    "state" : "approved"
+  } ],
+  "clientOrganizations" : [ "Plexus Health" ]
+}

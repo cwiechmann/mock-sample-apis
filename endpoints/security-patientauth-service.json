@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "2.2",
+    "title": "Security-PatientAuth-Service",
+    "x-summary": "Security service providing patient authentication"
+  },
+  "host": "api-env.demo.axway.com:8065",
+  "basePath": "/api/sec/auth/patient",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "Authorize",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-flow": "security-patientauth-service-Authorize"
+      }
+    }
+  },
+  "x-axway": {
+    "serviceType": "rest",
+    "image": "/api/portal/v1.3/discovery/swagger/apis/e69c03e1-d99d-4efc-bbd1-65701b20ed72/image",
+    "basePaths": [
+      "https://api-env.demo.axway.com:8065"
+    ],
+    "expired": false,
+    "retirementDate": 0,
+    "corsEnabled": true,
+    "deprecated": false,
+    "availableSDK": {
+      "ios-swift": "/discovery/sdk/e69c03e1-d99d-4efc-bbd1-65701b20ed72/ios-swift",
+      "titanium": "/discovery/sdk/e69c03e1-d99d-4efc-bbd1-65701b20ed72/titanium",
+      "android": "/discovery/sdk/e69c03e1-d99d-4efc-bbd1-65701b20ed72/android",
+      "nodejs": "/discovery/sdk/e69c03e1-d99d-4efc-bbd1-65701b20ed72/nodejs"
+    },
+    "apiResourceType": "swagger11ex",
+    "id": "e69c03e1-d99d-4efc-bbd1-65701b20ed72",
+    "state": "published",
+    "tags": {
+      "Industry": [
+        "Healthcare"
+      ],
+      "Type": [
+        "Demo_Amplify_PlexusHealth"
+      ],
+      "Category": [
+        "Auth",
+        " Security"
+      ]
+    }
+  }
+}

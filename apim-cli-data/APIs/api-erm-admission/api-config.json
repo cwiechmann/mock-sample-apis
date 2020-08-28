@@ -1,0 +1,53 @@
+{
+  "name" : "EMR-System-Admissions",
+  "path" : "/api/erm/admission",
+  "state" : "published",
+  "version" : "3.7",
+  "organization" : "Plexus Health",
+  "apiDefinition" : "EMR-System-Admissions.json",
+  "summary" : "Processing electronic health transactions for managing admissions",
+  "backendBasepath" : "http://192.168.65.1:8280/api/api/erm/admission/",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "OAuth",
+      "type" : "oauth",
+      "order" : 1,
+      "properties" : {
+        "tokenStore" : "<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>",
+        "accessTokenLocation" : "HEADER",
+        "authorizationHeaderPrefix" : "Bearer",
+        "accessTokenLocationQueryString" : "",
+        "scopesMustMatch" : "Any",
+        "scopes" : "patient.*, registration.submit",
+        "removeCredentialsOnSuccess" : "true",
+        "implicitGrantEnabled" : "true",
+        "implicitGrantLoginEndpointUrl" : "http://localhost:8089/api/oauth/authorize",
+        "implicitGrantLoginTokenName" : "access_token",
+        "authCodeGrantTypeEnabled" : "true",
+        "authCodeGrantTypeRequestEndpointUrl" : "http://localhost:8089/api/oauth/authorize",
+        "authCodeGrantTypeRequestClientIdName" : "client_id",
+        "authCodeGrantTypeRequestSecretName" : "client_secret",
+        "authCodeGrantTypeTokenEndpointUrl" : "http://localhost:8089/api/oauth/token",
+        "authCodeGrantTypeTokenEndpointTokenName" : "access_code"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_Amplify_PlexusHealth" ],
+    "Category" : [ "EMR" ]
+  },
+  "clientOrganizations" : [ "Plexus Health" ],
+  "applications" : [ {
+    "name" : "Plexus Suite – Appointment Management",
+    "enabled" : true,
+    "state" : "approved"
+  }, {
+    "name" : "Plexus Health Center",
+    "enabled" : true,
+    "state" : "approved"
+  } ]
+}

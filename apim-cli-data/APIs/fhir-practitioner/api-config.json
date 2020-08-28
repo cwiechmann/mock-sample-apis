@@ -1,0 +1,38 @@
+{
+  "name" : "FHIR Practitioner",
+  "path" : "/practitioner",
+  "state" : "published",
+  "version" : "DSTU2",
+  "organization" : "FHIR",
+  "apiDefinition" : "FHIR Practitioner.json",
+  "descriptionType" : "manual",
+  "descriptionManual" : "A person who is directly or indirectly involved in the provisioning of healthcare. For more information: https://www.hl7.org/fhir/practitioner.html",
+  "backendBasepath" : "http://192.168.65.1:8280/api/practitioner",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_FHIR" ],
+    "Category" : [ "Identification", " Individuals" ],
+    "Standard" : [ "FHIR" ]
+  },
+  "applications" : [ {
+    "name" : "FHIR - Everything Health",
+    "enabled" : true,
+    "state" : "approved"
+  } ],
+  "clientOrganizations" : [ "FHIR" ]
+}

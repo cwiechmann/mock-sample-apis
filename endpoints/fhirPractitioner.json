@@ -1,0 +1,686 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A person who is directly or indirectly involved in the provisioning of healthcare. For more information: https://www.hl7.org/fhir/practitioner.html",
+    "version": "DSTU2",
+    "title": "FHIR Practitioner"
+  },
+  "host": "api-env.demo.axway.com:8065",
+  "basePath": "/practitioner",
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "paths": {
+    "/Practitioner/{id}/_history/{vid}/_tags/_delete": {
+      "post": {
+        "description": "Removes all tags in the provided list of tags for the nominated version of the resource",
+        "operationId": "POST /Practitioner/{id}/_history/{vid}/_tags/_delete",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful deletion of tags"
+          }
+        },
+        "x-flow": "fhirPractitioner-postPractitionerHistoryTagsDeleteByIdVid"
+      }
+    },
+    "/Practitioner/{id}/$validate": {
+      "get": {
+        "operationId": "GET /Practitioner/{id}/$validate",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerValidateById"
+      }
+    },
+    "/metadata": {
+      "get": {
+        "description": "Retrieve resource",
+        "operationId": "GET /metadata",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getMetadata"
+      }
+    },
+    "/Practitioner/{id}/_history/{vid}": {
+      "get": {
+        "operationId": "GET /Practitioner/{id}/_history/{vid}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerHistoryByIdVid"
+      }
+    },
+    "/Practitioner/{id}/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated resource. This duplicates the HTTP header entries",
+        "operationId": "GET /Practitioner/{id}/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerTagsById"
+      },
+      "post": {
+        "description": "Affix tags in the list to the nominated resource",
+        "operationId": "POST /Practitioner/{id}/_tags",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully affix tags\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-postPractitionerTagsById"
+      }
+    },
+    "/Practitioner/$meta": {
+      "get": {
+        "operationId": "GET /Practitioner/$meta",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved resource(s)\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerMeta"
+      }
+    },
+    "/Practitioner/{id}/$everything": {
+      "get": {
+        "operationId": "GET /Practitioner/{id}/$everything",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerEverythingById"
+      }
+    },
+    "/Practitioner/$validate": {
+      "get": {
+        "operationId": "GET /Practitioner/$validate",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerValidate"
+      }
+    },
+    "/Practitioner/{id}/_history": {
+      "get": {
+        "operationId": "GET /Practitioner/{id}/_history",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerHistoryById"
+      }
+    },
+    "/_tags": {
+      "get": {
+        "description": "get a list of all tags",
+        "operationId": "GET /_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getTags"
+      }
+    },
+    "/": {
+      "get": {
+        "description": "Retrieve resource",
+        "operationId": "GET /",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-get"
+      },
+      "post": {
+        "description": "Create a new resource",
+        "operationId": "POST /",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Succesfully created a new resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-post"
+      }
+    },
+    "/Practitioner": {
+      "get": {
+        "description": "Get Practitioner",
+        "operationId": "GET /Practitioner",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitioner"
+      },
+      "post": {
+        "description": "Create a new type",
+        "operationId": "POST /Practitioner",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Succesfully created a new type\n"
+          },
+          "400": {
+            "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "404": {
+            "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-postPractitioner"
+      }
+    },
+    "/Practitioner/{id}/_tags/_delete": {
+      "post": {
+        "description": "Removes all tags in the provided list of tags for the nominated resource",
+        "operationId": "POST /Practitioner/{id}/_tags/_delete",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Status 204"
+          }
+        },
+        "x-flow": "fhirPractitioner-postPractitionerTagsDeleteById"
+      }
+    },
+    "/Practitioner/_history": {
+      "get": {
+        "operationId": "GET /Practitioner/_history",
+        "produces": [
+          "application/atom+xml",
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerHistory"
+      }
+    },
+    "/Practitioner/_search": {
+      "get": {
+        "operationId": "GET /Practitioner/_search",
+        "produces": [
+          "application/atom+xml",
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerSearch"
+      }
+    },
+    "/$meta": {
+      "get": {
+        "operationId": "GET /$meta",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved resource(s)\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getMeta"
+      }
+    },
+    "/Practitioner/_validate/{id}": {
+      "post": {
+        "description": "Create a new resource",
+        "operationId": "POST /Practitioner/_validate/{id}",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Validates a type\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-postPractitionerValidateById"
+      }
+    },
+    "/_history": {
+      "get": {
+        "description": "Whole System History",
+        "operationId": "GET /_history",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getHistory"
+      }
+    },
+    "/Practitioner/{id}/_history/{vid}/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated version of the resource.  This duplicates the HTTP header entries.",
+        "operationId": "GET /Practitioner/{id}/_history/{vid}/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerHistoryTagsByIdVid"
+      },
+      "post": {
+        "description": "Affix tags in the list to the nominated verion of the resource",
+        "operationId": "POST /Practitioner/{id}/_history/{vid}/_tags",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully affix tags\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-postPractitionerHistoryTagsByIdVid"
+      }
+    },
+    "/Practitioner/{id}": {
+      "get": {
+        "operationId": "GET /Practitioner/{id}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "404": {
+            "description": "Tried to get an unknown resource\n"
+          },
+          "410": {
+            "description": "Tried to get a deleted resource\n"
+          },
+          "422": {
+            "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerById"
+      },
+      "put": {
+        "description": "Update an existing instance",
+        "operationId": "PUT /Practitioner/{id}",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully updated the instance \n"
+          },
+          "201": {
+            "description": "Succesfully created the instance \n"
+          },
+          "400": {
+            "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "404": {
+            "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+          },
+          "405": {
+            "description": "Method Not allowed - the resource did not exist prior to the update, and the server does not allow client defined ids\n"
+          },
+          "409": {
+            "description": "Version conflict management\n"
+          },
+          "412": {
+            "description": "Version conflict management\n"
+          },
+          "422": {
+            "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-putPractitionerById"
+      },
+      "delete": {
+        "description": "Delete resource",
+        "operationId": "DELETE /Practitioner/{id}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Succesfully deleted resource\n"
+          },
+          "404": {
+            "description": "Not Found - resource was not found\n"
+          },
+          "405": {
+            "description": "Method Not allowed - delete is not allowed\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-deletePractitionerById"
+      }
+    },
+    "/Practitioner/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated resource type",
+        "operationId": "GET /Practitioner/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirPractitioner-getPractitionerTags"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "API Key": {
+      "description": "API Key",
+      "type": "apiKey",
+      "name": "KeyId",
+      "in": "header"
+    }
+  },
+  "x-axway": {
+    "serviceType": "rest",
+    "image": "/api/portal/v1.3/discovery/swagger/apis/846a64f3-4d86-4a00-b902-71fdf7b9219a/image",
+    "basePaths": [
+      "https://api-env.demo.axway.com:8065"
+    ],
+    "expired": false,
+    "retirementDate": 0,
+    "corsEnabled": true,
+    "deprecated": false,
+    "availableSDK": {
+      "ios-swift": "/discovery/sdk/846a64f3-4d86-4a00-b902-71fdf7b9219a/ios-swift",
+      "titanium": "/discovery/sdk/846a64f3-4d86-4a00-b902-71fdf7b9219a/titanium",
+      "android": "/discovery/sdk/846a64f3-4d86-4a00-b902-71fdf7b9219a/android",
+      "nodejs": "/discovery/sdk/846a64f3-4d86-4a00-b902-71fdf7b9219a/nodejs"
+    },
+    "apiResourceType": "swagger20",
+    "id": "846a64f3-4d86-4a00-b902-71fdf7b9219a",
+    "state": "published",
+    "tags": {
+      "Industry": [
+        "Healthcare"
+      ],
+      "Type": [
+        "Demo_FHIR"
+      ],
+      "Category": [
+        "Identification",
+        " Individuals"
+      ],
+      "Standard": [
+        "FHIR"
+      ]
+    }
+  }
+}

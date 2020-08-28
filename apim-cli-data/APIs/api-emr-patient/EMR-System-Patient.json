@@ -1,0 +1,161 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "3.7",
+    "title" : "EMR-System-Patient",
+    "x-summary" : "Processing electronic healthcare transactions for retrieving patient records"
+  },
+  "host" : "api-env.demo.axway.com:8065",
+  "basePath" : "/api/emr/patient",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/appointment" : {
+      "get" : {
+        "description" : "Retreive appointments list",
+        "operationId" : "Retreive appointments list",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "/situation" : {
+      "put" : {
+        "description" : "Update patient healthcare situation",
+        "operationId" : "Update healthcare situation",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/evaluation" : {
+      "post" : {
+        "description" : "Upload medical evaluation",
+        "operationId" : "Upload medical evaluation",
+        "parameters" : [ ],
+        "responses" : {
+          "201" : {
+            "description" : "Created"
+          }
+        }
+      }
+    },
+    "/registration/document" : {
+      "get" : {
+        "description" : "Get registration document",
+        "operationId" : "Get registration document",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "number"
+            }
+          }
+        }
+      },
+      "post" : {
+        "description" : "Submit registration document",
+        "operationId" : "Submit registration document",
+        "parameters" : [ ],
+        "responses" : {
+          "201" : {
+            "description" : "Created"
+          }
+        }
+      }
+    },
+    "/preadmission" : {
+      "post" : {
+        "description" : "Submit a pre-admission form for a scheduled appointment for a specific hospital",
+        "operationId" : "Schedule pre-admission",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "hospitalId",
+          "in" : "query",
+          "description" : "Hospital identifier for pre admission request",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Created"
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        }
+      }
+    },
+    "/insurance" : {
+      "get" : {
+        "description" : "Get insurance details for a patient : coverage, plans, estimations and responsabilities",
+        "operationId" : "Get insurance details",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "patientId",
+          "in" : "query",
+          "description" : "Patient identifier",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "query",
+          "description" : "type of insurance details",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        }
+      }
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "image" : "/api/portal/v1.3/discovery/swagger/apis/e95e229d-6ac0-43ac-9bf1-f09fb5b8f9c7/image",
+    "basePaths" : [ "https://api-env.demo.axway.com:8065" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/e95e229d-6ac0-43ac-9bf1-f09fb5b8f9c7/ios-swift",
+      "titanium" : "/discovery/sdk/e95e229d-6ac0-43ac-9bf1-f09fb5b8f9c7/titanium",
+      "android" : "/discovery/sdk/e95e229d-6ac0-43ac-9bf1-f09fb5b8f9c7/android",
+      "nodejs" : "/discovery/sdk/e95e229d-6ac0-43ac-9bf1-f09fb5b8f9c7/nodejs"
+    },
+    "apiResourceType" : "swagger11ex",
+    "id" : "e95e229d-6ac0-43ac-9bf1-f09fb5b8f9c7",
+    "state" : "published",
+    "tags" : {
+      "Industry" : [ "Healthcare" ],
+      "Type" : [ "Demo_Amplify_PlexusHealth" ],
+      "Category" : [ "Patient" ]
+    }
+  }
+}

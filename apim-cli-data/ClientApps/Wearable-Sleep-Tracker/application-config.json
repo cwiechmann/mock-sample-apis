@@ -1,0 +1,8 @@
+{
+  "name" : "Wearable - Sleep Tracker",
+  "organization" : "Community",
+  "description" : "Smart device app monitoring patient sleep cycle",
+  "state" : "approved",
+  "enabled" : true,
+  "email" : "plexus.sleep.contact@plexorg.com"
+}

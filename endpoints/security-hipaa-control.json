@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0",
+    "title": "Security-HIPAA-Control",
+    "x-summary": "Provides secure electronic access to health data and to remain in compliance with privacy regulations set by HHS (encryption, multi factor authentication, …)"
+  },
+  "host": "api-env.demo.axway.com:8065",
+  "basePath": "/api/hipaa/control",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "All",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-flow": "security-hipaa-control-All"
+      }
+    }
+  },
+  "x-axway": {
+    "serviceType": "rest",
+    "image": "/api/portal/v1.3/discovery/swagger/apis/14295903-2583-430a-8e5b-fda415191639/image",
+    "basePaths": [
+      "https://api-env.demo.axway.com:8065"
+    ],
+    "expired": false,
+    "retirementDate": 0,
+    "corsEnabled": true,
+    "deprecated": false,
+    "availableSDK": {
+      "ios-swift": "/discovery/sdk/14295903-2583-430a-8e5b-fda415191639/ios-swift",
+      "titanium": "/discovery/sdk/14295903-2583-430a-8e5b-fda415191639/titanium",
+      "android": "/discovery/sdk/14295903-2583-430a-8e5b-fda415191639/android",
+      "nodejs": "/discovery/sdk/14295903-2583-430a-8e5b-fda415191639/nodejs"
+    },
+    "apiResourceType": "swagger11ex",
+    "id": "14295903-2583-430a-8e5b-fda415191639",
+    "state": "published",
+    "tags": {
+      "Industry": [
+        "Healthcare"
+      ],
+      "Type": [
+        "Demo_Amplify_PlexusHealth"
+      ],
+      "Category": [
+        "Security",
+        " Control"
+      ]
+    }
+  }
+}

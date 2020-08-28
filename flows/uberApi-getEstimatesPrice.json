@@ -1,0 +1,64 @@
+{
+	"schemaVersion": "4",
+	"info": {
+		"name": "getEstimatesPrice"
+	},
+	"parameter": {
+		"properties": {
+			"params": {
+				"type": "object",
+				"description": "The parameters from the endpoint."
+			},
+			"request": {
+				"type": "object",
+				"description": "The HTTP request."
+			},
+			"config": {
+				"type": "object",
+				"description": "The service's configuration"
+			},
+			"env": {
+				"type": "object",
+				"description": "The host OS environment"
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"params",
+			"request",
+			"config",
+			"env"
+		]
+	},
+	"start": "http.setresponse.1",
+	"nodes": {
+		"http.setresponse.1": {
+			"type": "nodehandler://axway-flow/http",
+			"method": "setresponse",
+			"name": "Set HTTP Response",
+			"parameters": [
+				{
+					"name": "status",
+					"value": "200",
+					"type": "number",
+					"metaName": "Status",
+					"metaDescription": "The HTTP status code"
+				},
+				{
+					"name": "body",
+					"value": "[\n    {\n        \"product_id\": \"sint dolor qui minim\",\n        \"currency_code\": \"ad tempor nulla aliquip non\",\n        \"display_name\": \"officia\",\n        \"estimate\": \"id dolor\",\n        \"low_estimate\": 83435651,\n        \"high_estimate\": 50452681,\n        \"surge_multiplier\": 93409455\n    }\n]",
+					"type": "array",
+					"metaName": "Body",
+					"metaDescription": "The response payload"
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.response",
+					"metaName": "Next"
+				}
+			},
+			"metaMethod": "Set HTTP Response"
+		}
+	}
+}

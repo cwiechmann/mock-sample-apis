@@ -1,0 +1,515 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a diagnosis during an encounter; populating a problem list or a summary statement, such as a discharge summary. For more information: https://www.hl7.org/fhir/condition.html",
+    "version" : "DSTU2",
+    "title" : "FHIR Condition"
+  },
+  "host" : "api-env.demo.axway.com:8065",
+  "basePath" : "/condition",
+  "schemes" : [ "https" ],
+  "security" : [ {
+    "API Key" : [ ]
+  } ],
+  "paths" : {
+    "/Condition/{id}/_history" : {
+      "get" : {
+        "operationId" : "GET /Condition/{id}/_history",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/metadata" : {
+      "get" : {
+        "description" : "Retrieve resource",
+        "operationId" : "GET /metadata",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully retrieved resource\n"
+          }
+        }
+      }
+    },
+    "/Condition/$validate" : {
+      "get" : {
+        "operationId" : "GET /Condition/$validate",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/_tags" : {
+      "get" : {
+        "description" : "get a list of tags used for the nominated resource. This duplicates the HTTP header entries",
+        "operationId" : "GET /Condition/{id}/_tags",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully retrieved resource\n"
+          }
+        }
+      },
+      "post" : {
+        "description" : "Affix tags in the list to the nominated resource",
+        "operationId" : "POST /Condition/{id}/_tags",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Succesfully affix tags\n"
+          }
+        }
+      }
+    },
+    "/Condition/_validate/{id}" : {
+      "post" : {
+        "description" : "Create a new resource",
+        "operationId" : "POST /Condition/_validate/{id}",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Validates a type\n"
+          }
+        }
+      }
+    },
+    "/_tags" : {
+      "get" : {
+        "description" : "get a list of all tags",
+        "operationId" : "GET /_tags",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully retrieved resource\n"
+          }
+        }
+      }
+    },
+    "/Condition/{id}" : {
+      "get" : {
+        "operationId" : "GET /Condition/{id}",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          },
+          "410" : {
+            "description" : "Tried to get a deleted resource\n"
+          },
+          "422" : {
+            "description" : "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          },
+          "404" : {
+            "description" : "Tried to get an unknown resource\n"
+          }
+        }
+      },
+      "put" : {
+        "description" : "Update an existing instance",
+        "operationId" : "PUT /Condition/{id}",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully updated the instance \n"
+          },
+          "201" : {
+            "description" : "Succesfully created the instance \n"
+          },
+          "400" : {
+            "description" : "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "422" : {
+            "description" : "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          },
+          "412" : {
+            "description" : "Version conflict management\n"
+          },
+          "404" : {
+            "description" : "Not Found - resource type not support, or not a FHIR validation rules\n"
+          },
+          "405" : {
+            "description" : "Method Not allowed - the resource did not exist prior to the update, and the server does not allow client defined ids\n"
+          },
+          "409" : {
+            "description" : "Version conflict management\n"
+          }
+        }
+      },
+      "delete" : {
+        "description" : "Delete resource",
+        "operationId" : "DELETE /Condition/{id}",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Succesfully deleted resource\n"
+          },
+          "404" : {
+            "description" : "Not Found - resource was not found\n"
+          },
+          "405" : {
+            "description" : "Method Not allowed - delete is not allowed\n"
+          }
+        }
+      }
+    },
+    "/Condition/$meta" : {
+      "get" : {
+        "operationId" : "GET /Condition/$meta",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully retrieved resource(s)\n"
+          }
+        }
+      }
+    },
+    "/" : {
+      "get" : {
+        "description" : "Retrieve resource",
+        "operationId" : "GET /",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully retrieved resource\n"
+          }
+        }
+      },
+      "post" : {
+        "description" : "Create a new resource",
+        "operationId" : "POST /",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "201" : {
+            "description" : "Succesfully created a new resource\n"
+          }
+        }
+      }
+    },
+    "/Condition/_history" : {
+      "get" : {
+        "operationId" : "GET /Condition/_history",
+        "produces" : [ "application/atom+xml", "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/_tags/_delete" : {
+      "post" : {
+        "description" : "Removes all tags in the provided list of tags for the nominated resource",
+        "operationId" : "POST /Condition/{id}/_tags/_delete",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Status 204"
+          }
+        }
+      }
+    },
+    "/Condition/_search" : {
+      "get" : {
+        "operationId" : "GET /Condition/_search",
+        "produces" : [ "application/atom+xml", "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/$meta" : {
+      "get" : {
+        "operationId" : "GET /$meta",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully retrieved resource(s)\n"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/_history/{vid}/_tags" : {
+      "get" : {
+        "description" : "get a list of tags used for the nominated version of the resource.  This duplicates the HTTP header entries.",
+        "operationId" : "GET /Condition/{id}/_history/{vid}/_tags",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "vid",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully retrieved resource\n"
+          }
+        }
+      },
+      "post" : {
+        "description" : "Affix tags in the list to the nominated verion of the resource",
+        "operationId" : "POST /Condition/{id}/_history/{vid}/_tags",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "vid",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Succesfully affix tags\n"
+          }
+        }
+      }
+    },
+    "/Condition" : {
+      "get" : {
+        "description" : "Get Condition",
+        "operationId" : "GET /Condition",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "post" : {
+        "description" : "Create a new type",
+        "operationId" : "POST /Condition",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "201" : {
+            "description" : "Succesfully created a new type\n"
+          },
+          "400" : {
+            "description" : "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "404" : {
+            "description" : "Not Found - resource type not support, or not a FHIR validation rules\n"
+          }
+        }
+      }
+    },
+    "/_history" : {
+      "get" : {
+        "description" : "Whole System History",
+        "operationId" : "GET /_history",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully retrieved resource\n"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/_history/{vid}/_tags/_delete" : {
+      "post" : {
+        "description" : "Removes all tags in the provided list of tags for the nominated version of the resource",
+        "operationId" : "POST /Condition/{id}/_history/{vid}/_tags/_delete",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "vid",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Successful deletion of tags"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/$everything" : {
+      "get" : {
+        "operationId" : "GET /Condition/{id}/$everything",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/$validate" : {
+      "get" : {
+        "operationId" : "GET /Condition/{id}/$validate",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/Condition/_tags" : {
+      "get" : {
+        "description" : "get a list of tags used for the nominated resource type",
+        "operationId" : "GET /Condition/_tags",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesfully retrieved resource\n"
+          }
+        }
+      }
+    },
+    "/Condition/{id}/_history/{vid}" : {
+      "get" : {
+        "operationId" : "GET /Condition/{id}/_history/{vid}",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "vid",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "API Key" : {
+      "description" : "API Key",
+      "type" : "apiKey",
+      "name" : "KeyId",
+      "in" : "header"
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "image" : "/api/portal/v1.3/discovery/swagger/apis/c46ae619-aab4-4d59-b87a-0974ff3e7a3e/image",
+    "basePaths" : [ "https://api-env.demo.axway.com:8065" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/c46ae619-aab4-4d59-b87a-0974ff3e7a3e/ios-swift",
+      "titanium" : "/discovery/sdk/c46ae619-aab4-4d59-b87a-0974ff3e7a3e/titanium",
+      "android" : "/discovery/sdk/c46ae619-aab4-4d59-b87a-0974ff3e7a3e/android",
+      "nodejs" : "/discovery/sdk/c46ae619-aab4-4d59-b87a-0974ff3e7a3e/nodejs"
+    },
+    "apiResourceType" : "swagger20",
+    "id" : "c46ae619-aab4-4d59-b87a-0974ff3e7a3e",
+    "state" : "published",
+    "tags" : {
+      "Industry" : [ "Healthcare" ],
+      "Type" : [ "Demo_FHIR" ],
+      "Category" : [ "Clinical", " General" ],
+      "Standard" : [ "FHIR" ]
+    }
+  }
+}

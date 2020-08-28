@@ -1,0 +1,51 @@
+{
+  "name" : "FHIR Patient",
+  "path" : "/patient",
+  "state" : "published",
+  "version" : "DSTU2",
+  "organization" : "FHIR",
+  "apiDefinition" : "FHIR Patient.json",
+  "descriptionType" : "manual",
+  "descriptionManual" : "Demographics and other administrative information about an individual or animal receiving care or other health-related services. For more information: https://www.hl7.org/fhir/patient.html",
+  "backendBasepath" : "http://192.168.65.1:8280/api/patient",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "OAuth",
+      "type" : "oauth",
+      "order" : 1,
+      "properties" : {
+        "tokenStore" : "<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>",
+        "accessTokenLocation" : "HEADER",
+        "authorizationHeaderPrefix" : "Bearer",
+        "accessTokenLocationQueryString" : "",
+        "scopesMustMatch" : "Any",
+        "scopes" : "resource.WRITE, resource.READ",
+        "removeCredentialsOnSuccess" : "true",
+        "implicitGrantEnabled" : "true",
+        "implicitGrantLoginEndpointUrl" : "http://localhost:8089/api/oauth/authorize",
+        "implicitGrantLoginTokenName" : "access_token",
+        "authCodeGrantTypeEnabled" : "true",
+        "authCodeGrantTypeRequestEndpointUrl" : "http://localhost:8089/api/oauth/authorize",
+        "authCodeGrantTypeRequestClientIdName" : "client_id",
+        "authCodeGrantTypeRequestSecretName" : "client_secret",
+        "authCodeGrantTypeTokenEndpointUrl" : "http://localhost:8089/api/oauth/token",
+        "authCodeGrantTypeTokenEndpointTokenName" : "access_code"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_FHIR" ],
+    "Category" : [ "Identification", " Individuals" ],
+    "Standard" : [ "FHIR" ]
+  },
+  "clientOrganizations" : [ "FHIR" ],
+  "applications" : [ {
+    "name" : "FHIR - Everything Health",
+    "enabled" : true,
+    "state" : "approved"
+  } ]
+}

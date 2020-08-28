@@ -1,0 +1,47 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "2.1",
+    "title" : "HL7-Interface-Module",
+    "x-summary" : "HL7 standards module verifications"
+  },
+  "host" : "api-env.demo.axway.com:8065",
+  "basePath" : "/api/hl7/module/verif",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "operationId" : "All",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "image" : "/api/portal/v1.3/discovery/swagger/apis/0550bd3b-f9a2-44a6-a6fd-169cdf86646c/image",
+    "basePaths" : [ "https://api-env.demo.axway.com:8065" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/0550bd3b-f9a2-44a6-a6fd-169cdf86646c/ios-swift",
+      "titanium" : "/discovery/sdk/0550bd3b-f9a2-44a6-a6fd-169cdf86646c/titanium",
+      "android" : "/discovery/sdk/0550bd3b-f9a2-44a6-a6fd-169cdf86646c/android",
+      "nodejs" : "/discovery/sdk/0550bd3b-f9a2-44a6-a6fd-169cdf86646c/nodejs"
+    },
+    "apiResourceType" : "swagger11ex",
+    "id" : "0550bd3b-f9a2-44a6-a6fd-169cdf86646c",
+    "state" : "published",
+    "tags" : {
+      "Industry" : [ "Healthcare" ],
+      "Type" : [ "Demo_Amplify_PlexusHealth" ]
+    }
+  }
+}

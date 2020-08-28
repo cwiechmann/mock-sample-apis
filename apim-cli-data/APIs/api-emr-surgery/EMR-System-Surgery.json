@@ -1,0 +1,48 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "3.7",
+    "title" : "EMR-System-Surgery",
+    "x-summary" : "Processing electronic healthcare transactions for retrieving surgery availabilities"
+  },
+  "host" : "api-env.demo.axway.com:8065",
+  "basePath" : "/api/emr/surgery",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "operationId" : "All",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "image" : "/api/portal/v1.3/discovery/swagger/apis/86fbbb27-3ebe-444f-9cfa-6a59e1ff6c0f/image",
+    "basePaths" : [ "https://api-env.demo.axway.com:8065" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/86fbbb27-3ebe-444f-9cfa-6a59e1ff6c0f/ios-swift",
+      "titanium" : "/discovery/sdk/86fbbb27-3ebe-444f-9cfa-6a59e1ff6c0f/titanium",
+      "android" : "/discovery/sdk/86fbbb27-3ebe-444f-9cfa-6a59e1ff6c0f/android",
+      "nodejs" : "/discovery/sdk/86fbbb27-3ebe-444f-9cfa-6a59e1ff6c0f/nodejs"
+    },
+    "apiResourceType" : "swagger11ex",
+    "id" : "86fbbb27-3ebe-444f-9cfa-6a59e1ff6c0f",
+    "state" : "published",
+    "tags" : {
+      "Industry" : [ "Healthcare" ],
+      "Type" : [ "Demo_Amplify_PlexusHealth" ],
+      "Category" : [ "Surgery" ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name" : "FHIR Organization",
+  "path" : "/organization",
+  "state" : "published",
+  "version" : "DSTU2",
+  "organization" : "FHIR",
+  "apiDefinition" : "FHIR Organization.json",
+  "descriptionType" : "manual",
+  "descriptionManual" : "A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc. For more infomation: https://www.hl7.org/fhir/organization.html",
+  "backendBasepath" : "http://192.168.65.1:8280/api/organization",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_FHIR" ],
+    "Category" : [ "Identification", " Groups" ],
+    "Standard" : [ "FHIR" ]
+  },
+  "applications" : [ {
+    "name" : "FHIR - Everything Health",
+    "enabled" : true,
+    "state" : "approved"
+  } ],
+  "clientOrganizations" : [ "FHIR" ]
+}

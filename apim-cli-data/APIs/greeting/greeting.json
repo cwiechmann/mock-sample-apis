@@ -1,0 +1,87 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "mock-sample-apis",
+      "description": "An API Builder service",
+      "version": "1.0.0"
+    },
+    "host": "localhost:8280",
+    "basePath": "/api",
+    "security": [
+      {
+        "basicAuth": [
+          
+        ]
+      }
+    ],
+    "paths": {
+      "/greet": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "greeting",
+              "schema": {
+                "$ref": "#/definitions/schema.mock-sample-apis_greeting"
+              }
+            },
+            "400": {
+              "description": "bad request",
+              "schema": {
+                "$ref": "#/definitions/schema.mock-sample-apis_error"
+              }
+            },
+            "401": {
+              "description": "Unauthorized",
+              "schema": {
+                
+              }
+            }
+          },
+          "summary": "Greet a user",
+          "operationId": "Greet",
+          "parameters": [
+            {
+              "description": "The username",
+              "in": "query",
+              "name": "username",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "tags": [
+            "helloworld"
+          ]
+        }
+      }
+    },
+    "securityDefinitions": {
+      "basicAuth": {
+        "type": "basic",
+        "description": "Require authorized access to API"
+      }
+    },
+    "schemes": [
+      "http"
+    ],
+    "definitions": {
+      "schema.mock-sample-apis_greeting": {
+        "type": "string",
+        "description": "A greeting message for the user"
+      },
+      "schema.mock-sample-apis_error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "The error message"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      }
+    }
+  }

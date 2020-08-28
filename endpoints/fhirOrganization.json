@@ -1,0 +1,686 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc. For more infomation: https://www.hl7.org/fhir/organization.html",
+    "version": "DSTU2",
+    "title": "FHIR Organization"
+  },
+  "host": "api-env.demo.axway.com:8065",
+  "basePath": "/organization",
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "paths": {
+    "/metadata": {
+      "get": {
+        "description": "Retrieve resource",
+        "operationId": "GET /metadata",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getMetadata"
+      }
+    },
+    "/Organization/{id}/$validate": {
+      "get": {
+        "operationId": "GET /Organization/{id}/$validate",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationValidateById"
+      }
+    },
+    "/Organization/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated resource type",
+        "operationId": "GET /Organization/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationTags"
+      }
+    },
+    "/Organization/_history": {
+      "get": {
+        "operationId": "GET /Organization/_history",
+        "produces": [
+          "application/atom+xml",
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationHistory"
+      }
+    },
+    "/Organization/{id}/_tags/_delete": {
+      "post": {
+        "description": "Removes all tags in the provided list of tags for the nominated resource",
+        "operationId": "POST /Organization/{id}/_tags/_delete",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Status 204"
+          }
+        },
+        "x-flow": "fhirOrganization-postOrganizationTagsDeleteById"
+      }
+    },
+    "/Organization/{id}/$everything": {
+      "get": {
+        "operationId": "GET /Organization/{id}/$everything",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationEverythingById"
+      }
+    },
+    "/_tags": {
+      "get": {
+        "description": "get a list of all tags",
+        "operationId": "GET /_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getTags"
+      }
+    },
+    "/Organization/_validate/{id}": {
+      "post": {
+        "description": "Create a new resource",
+        "operationId": "POST /Organization/_validate/{id}",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Validates a type\n"
+          }
+        },
+        "x-flow": "fhirOrganization-postOrganizationValidateById"
+      }
+    },
+    "/": {
+      "get": {
+        "description": "Retrieve resource",
+        "operationId": "GET /",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-get"
+      },
+      "post": {
+        "description": "Create a new resource",
+        "operationId": "POST /",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Succesfully created a new resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-post"
+      }
+    },
+    "/Organization/{id}/_history/{vid}": {
+      "get": {
+        "operationId": "GET /Organization/{id}/_history/{vid}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationHistoryByIdVid"
+      }
+    },
+    "/Organization/$validate": {
+      "get": {
+        "operationId": "GET /Organization/$validate",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationValidate"
+      }
+    },
+    "/Organization/{id}/_history/{vid}/_tags/_delete": {
+      "post": {
+        "description": "Removes all tags in the provided list of tags for the nominated version of the resource",
+        "operationId": "POST /Organization/{id}/_history/{vid}/_tags/_delete",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful deletion of tags"
+          }
+        },
+        "x-flow": "fhirOrganization-postOrganizationHistoryTagsDeleteByIdVid"
+      }
+    },
+    "/Organization/{id}/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated resource. This duplicates the HTTP header entries",
+        "operationId": "GET /Organization/{id}/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationTagsById"
+      },
+      "post": {
+        "description": "Affix tags in the list to the nominated resource",
+        "operationId": "POST /Organization/{id}/_tags",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully affix tags\n"
+          }
+        },
+        "x-flow": "fhirOrganization-postOrganizationTagsById"
+      }
+    },
+    "/Organization/$meta": {
+      "get": {
+        "operationId": "GET /Organization/$meta",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved resource(s)\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationMeta"
+      }
+    },
+    "/$meta": {
+      "get": {
+        "operationId": "GET /$meta",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved resource(s)\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getMeta"
+      }
+    },
+    "/Organization/{id}/_history": {
+      "get": {
+        "operationId": "GET /Organization/{id}/_history",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationHistoryById"
+      }
+    },
+    "/_history": {
+      "get": {
+        "description": "Whole System History",
+        "operationId": "GET /_history",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getHistory"
+      }
+    },
+    "/Organization": {
+      "get": {
+        "description": "Get Organization",
+        "operationId": "GET /Organization",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganization"
+      },
+      "post": {
+        "description": "Create a new type",
+        "operationId": "POST /Organization",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Succesfully created a new type\n"
+          },
+          "400": {
+            "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "404": {
+            "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+          }
+        },
+        "x-flow": "fhirOrganization-postOrganization"
+      }
+    },
+    "/Organization/{id}/_history/{vid}/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated version of the resource.  This duplicates the HTTP header entries.",
+        "operationId": "GET /Organization/{id}/_history/{vid}/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationHistoryTagsByIdVid"
+      },
+      "post": {
+        "description": "Affix tags in the list to the nominated verion of the resource",
+        "operationId": "POST /Organization/{id}/_history/{vid}/_tags",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully affix tags\n"
+          }
+        },
+        "x-flow": "fhirOrganization-postOrganizationHistoryTagsByIdVid"
+      }
+    },
+    "/Organization/{id}": {
+      "get": {
+        "operationId": "GET /Organization/{id}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "404": {
+            "description": "Tried to get an unknown resource\n"
+          },
+          "410": {
+            "description": "Tried to get a deleted resource\n"
+          },
+          "422": {
+            "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationById"
+      },
+      "put": {
+        "description": "Update an existing instance",
+        "operationId": "PUT /Organization/{id}",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully updated the instance \n"
+          },
+          "201": {
+            "description": "Succesfully created the instance \n"
+          },
+          "400": {
+            "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "404": {
+            "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+          },
+          "405": {
+            "description": "Method Not allowed - the resource did not exist prior to the update, and the server does not allow client defined ids\n"
+          },
+          "409": {
+            "description": "Version conflict management\n"
+          },
+          "412": {
+            "description": "Version conflict management\n"
+          },
+          "422": {
+            "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          }
+        },
+        "x-flow": "fhirOrganization-putOrganizationById"
+      },
+      "delete": {
+        "description": "Delete resource",
+        "operationId": "DELETE /Organization/{id}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Succesfully deleted resource\n"
+          },
+          "404": {
+            "description": "Not Found - resource was not found\n"
+          },
+          "405": {
+            "description": "Method Not allowed - delete is not allowed\n"
+          }
+        },
+        "x-flow": "fhirOrganization-deleteOrganizationById"
+      }
+    },
+    "/Organization/_search": {
+      "get": {
+        "operationId": "GET /Organization/_search",
+        "produces": [
+          "application/atom+xml",
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirOrganization-getOrganizationSearch"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "API Key": {
+      "description": "API Key",
+      "type": "apiKey",
+      "name": "KeyId",
+      "in": "header"
+    }
+  },
+  "x-axway": {
+    "serviceType": "rest",
+    "image": "/api/portal/v1.3/discovery/swagger/apis/c01dd97b-d251-4cfc-a238-41b49c0d288e/image",
+    "basePaths": [
+      "https://api-env.demo.axway.com:8065"
+    ],
+    "expired": false,
+    "retirementDate": 0,
+    "corsEnabled": true,
+    "deprecated": false,
+    "availableSDK": {
+      "ios-swift": "/discovery/sdk/c01dd97b-d251-4cfc-a238-41b49c0d288e/ios-swift",
+      "titanium": "/discovery/sdk/c01dd97b-d251-4cfc-a238-41b49c0d288e/titanium",
+      "android": "/discovery/sdk/c01dd97b-d251-4cfc-a238-41b49c0d288e/android",
+      "nodejs": "/discovery/sdk/c01dd97b-d251-4cfc-a238-41b49c0d288e/nodejs"
+    },
+    "apiResourceType": "swagger20",
+    "id": "c01dd97b-d251-4cfc-a238-41b49c0d288e",
+    "state": "published",
+    "tags": {
+      "Industry": [
+        "Healthcare"
+      ],
+      "Type": [
+        "Demo_FHIR"
+      ],
+      "Category": [
+        "Identification",
+        " Groups"
+      ],
+      "Standard": [
+        "FHIR"
+      ]
+    }
+  }
+}

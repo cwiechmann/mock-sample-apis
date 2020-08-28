@@ -1,0 +1,56 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "2.1",
+    "title": "HL7-Message-Maker",
+    "x-summary": "Manage message standards for transfer of clinical and administrative data between software applications used by various healthcare providers"
+  },
+  "host": "api-env.demo.axway.com:8065",
+  "basePath": "/api/hl7/message",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "All",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-flow": "hl7-message-maker-All"
+      }
+    }
+  },
+  "x-axway": {
+    "serviceType": "rest",
+    "image": "/api/portal/v1.3/discovery/swagger/apis/d11c0eac-49d5-4bf3-b087-ad428080b62a/image",
+    "basePaths": [
+      "https://api-env.demo.axway.com:8065"
+    ],
+    "expired": false,
+    "retirementDate": 0,
+    "corsEnabled": true,
+    "deprecated": false,
+    "availableSDK": {
+      "ios-swift": "/discovery/sdk/d11c0eac-49d5-4bf3-b087-ad428080b62a/ios-swift",
+      "titanium": "/discovery/sdk/d11c0eac-49d5-4bf3-b087-ad428080b62a/titanium",
+      "android": "/discovery/sdk/d11c0eac-49d5-4bf3-b087-ad428080b62a/android",
+      "nodejs": "/discovery/sdk/d11c0eac-49d5-4bf3-b087-ad428080b62a/nodejs"
+    },
+    "apiResourceType": "swagger11ex",
+    "id": "d11c0eac-49d5-4bf3-b087-ad428080b62a",
+    "state": "published",
+    "tags": {
+      "Industry": [
+        "Healthcare"
+      ],
+      "Type": [
+        "Demo_Amplify_PlexusHealth"
+      ]
+    }
+  }
+}

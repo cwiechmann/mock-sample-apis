@@ -1,0 +1,190 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "3.7",
+    "title": "EMR-System-Admissions",
+    "x-summary": "Processing electronic health transactions for managing admissions"
+  },
+  "host": "api-env.demo.axway.com:8065",
+  "basePath": "/api/erm/admission",
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "OAuthImplicit": [
+        "patient.*"
+      ]
+    },
+    {
+      "OAuthImplicit": [
+        " registration.submit"
+      ]
+    },
+    {
+      "OAuthAccessCode": [
+        "patient.*"
+      ]
+    },
+    {
+      "OAuthAccessCode": [
+        " registration.submit"
+      ]
+    }
+  ],
+  "paths": {
+    "/schedule": {
+      "put": {
+        "operationId": "Re-schedule admission",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-flow": "emr-system-admissions-Re-schedule admission"
+      }
+    },
+    "/list": {
+      "options": {
+        "operationId": "All",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-flow": "emr-system-admissions-All"
+      }
+    },
+    "/update": {
+      "put": {
+        "operationId": "Update admission",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-flow": "emr-system-admissions-Update admission"
+      }
+    },
+    "/": {
+      "get": {
+        "operationId": "Admission details",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-flow": "emr-system-admissions-Admission details"
+      },
+      "post": {
+        "operationId": "Create admission",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "x-flow": "emr-system-admissions-Create admission"
+      },
+      "delete": {
+        "operationId": "Delete admission",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-flow": "emr-system-admissions-Delete admission"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuthImplicit": {
+      "description": "OAuth",
+      "type": "oauth2",
+      "authorizationUrl": "http://localhost:8089/api/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "patient.*": "",
+        " registration.submit": ""
+      },
+      "x-axway": {
+        "accessTokenLocationQueryString": "Bearer",
+        "tokenName": "access_token",
+        "scopesMatching": "Any",
+        "accessTokenLocation": "HEADER",
+        "typeDisplayName": "OAuth 2.0",
+        "authorizationHeaderPrefix": ""
+      }
+    },
+    "OAuthAccessCode": {
+      "description": "OAuth",
+      "type": "oauth2",
+      "authorizationUrl": "http://localhost:8089/api/oauth/authorize",
+      "tokenUrl": "http://localhost:8089/api/oauth/token",
+      "flow": "accessCode",
+      "scopes": {
+        "patient.*": "",
+        " registration.submit": ""
+      },
+      "x-axway": {
+        "clientSecretName": "client_secret",
+        "authorizationHeaderPrefix": "",
+        "accessTokenLocationQueryString": "Bearer",
+        "clientIdName": "client_id",
+        "tokenName": "access_code",
+        "scopesMatching": "Any",
+        "accessTokenLocation": "HEADER",
+        "typeDisplayName": "OAuth 2.0"
+      }
+    }
+  },
+  "x-axway": {
+    "serviceType": "rest",
+    "image": "/api/portal/v1.3/discovery/swagger/apis/c826136c-5d7e-484a-a18f-5338c88d671e/image",
+    "basePaths": [
+      "https://api-env.demo.axway.com:8065"
+    ],
+    "expired": false,
+    "retirementDate": 0,
+    "corsEnabled": true,
+    "deprecated": false,
+    "availableSDK": {
+      "ios-swift": "/discovery/sdk/c826136c-5d7e-484a-a18f-5338c88d671e/ios-swift",
+      "titanium": "/discovery/sdk/c826136c-5d7e-484a-a18f-5338c88d671e/titanium",
+      "android": "/discovery/sdk/c826136c-5d7e-484a-a18f-5338c88d671e/android",
+      "nodejs": "/discovery/sdk/c826136c-5d7e-484a-a18f-5338c88d671e/nodejs"
+    },
+    "apiResourceType": "swagger11ex",
+    "id": "c826136c-5d7e-484a-a18f-5338c88d671e",
+    "state": "published",
+    "tags": {
+      "Industry": [
+        "Healthcare"
+      ],
+      "Type": [
+        "Demo_Amplify_PlexusHealth"
+      ],
+      "Category": [
+        "EMR"
+      ]
+    }
+  }
+}

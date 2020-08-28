@@ -1,0 +1,38 @@
+{
+  "name" : "FHIR Procedure",
+  "path" : "/procedure",
+  "state" : "published",
+  "version" : "DSTU2",
+  "organization" : "FHIR",
+  "apiDefinition" : "FHIR Procedure.json",
+  "descriptionType" : "manual",
+  "descriptionManual" : "An action that is or was performed on a patient. This can be a physical intervention like an operation, or less invasive like counseling or hypnotherapy. For more information: https://www.hl7.org/fhir/procedure.html",
+  "backendBasepath" : "http://192.168.65.1:8280/api/procedure",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_FHIR" ],
+    "Category" : [ "Clinical", " General" ],
+    "Standard" : [ "FHIR" ]
+  },
+  "clientOrganizations" : [ "FHIR" ],
+  "applications" : [ {
+    "name" : "FHIR - Everything Health",
+    "enabled" : true,
+    "state" : "approved"
+  } ]
+}

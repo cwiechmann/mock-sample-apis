@@ -1,0 +1,37 @@
+{
+  "name" : "FHIR Appointment",
+  "path" : "/appointment",
+  "state" : "published",
+  "version" : "DSTU2",
+  "organization" : "FHIR",
+  "apiDefinition" : "FHIR Appointment.json",
+  "descriptionType" : "manual",
+  "descriptionManual" : "A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s). For more information: https://www.hl7.org/fhir/appointment.html",
+  "backendBasepath" : "http://192.168.65.1:8280/api/appointment",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_FHIR" ],
+    "Category" : [ "Workflow", " Scheduling" ],
+    "Standard" : [ "FHIR" ]
+  },
+  "applications" : [ {
+    "name" : "FHIR - Everything Health",
+    "enabled" : true,
+    "state" : "approved"
+  } ]
+}

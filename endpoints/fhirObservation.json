@@ -1,0 +1,686 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Measurements and simple assertions made about a patient, device or other subject. For more information: https://www.hl7.org/fhir/observation.html",
+    "version": "DSTU2",
+    "title": "FHIR Observation"
+  },
+  "host": "api-env.demo.axway.com:8065",
+  "basePath": "/observation",
+  "schemes": [
+    "https"
+  ],
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "paths": {
+    "/metadata": {
+      "get": {
+        "description": "Retrieve resource",
+        "operationId": "GET /metadata",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-getMetadata"
+      }
+    },
+    "/Observation/{id}/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated resource. This duplicates the HTTP header entries",
+        "operationId": "GET /Observation/{id}/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationTagsById"
+      },
+      "post": {
+        "description": "Affix tags in the list to the nominated resource",
+        "operationId": "POST /Observation/{id}/_tags",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully affix tags\n"
+          }
+        },
+        "x-flow": "fhirObservation-postObservationTagsById"
+      }
+    },
+    "/Observation/_history": {
+      "get": {
+        "operationId": "GET /Observation/_history",
+        "produces": [
+          "application/atom+xml",
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationHistory"
+      }
+    },
+    "/Observation/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated resource type",
+        "operationId": "GET /Observation/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationTags"
+      }
+    },
+    "/Observation/{id}": {
+      "get": {
+        "operationId": "GET /Observation/{id}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "404": {
+            "description": "Tried to get an unknown resource\n"
+          },
+          "410": {
+            "description": "Tried to get a deleted resource\n"
+          },
+          "422": {
+            "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationById"
+      },
+      "put": {
+        "description": "Update an existing instance",
+        "operationId": "PUT /Observation/{id}",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully updated the instance \n"
+          },
+          "201": {
+            "description": "Succesfully created the instance \n"
+          },
+          "400": {
+            "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "404": {
+            "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+          },
+          "405": {
+            "description": "Method Not allowed - the resource did not exist prior to the update, and the server does not allow client defined ids\n"
+          },
+          "409": {
+            "description": "Version conflict management\n"
+          },
+          "412": {
+            "description": "Version conflict management\n"
+          },
+          "422": {
+            "description": "Unprocessable Entity - the proposed resource violated applicable FHIR  profiles or server business rules.  This should be accompanied by an OperationOutcome resource providing additional detail.\n"
+          }
+        },
+        "x-flow": "fhirObservation-putObservationById"
+      },
+      "delete": {
+        "description": "Delete resource",
+        "operationId": "DELETE /Observation/{id}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Succesfully deleted resource\n"
+          },
+          "404": {
+            "description": "Not Found - resource was not found\n"
+          },
+          "405": {
+            "description": "Method Not allowed - delete is not allowed\n"
+          }
+        },
+        "x-flow": "fhirObservation-deleteObservationById"
+      }
+    },
+    "/Observation": {
+      "get": {
+        "description": "Get Observation",
+        "operationId": "GET /Observation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservation"
+      },
+      "post": {
+        "description": "Create a new type",
+        "operationId": "POST /Observation",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Succesfully created a new type\n"
+          },
+          "400": {
+            "description": "Bad Request - Resource cound not be parsed or failed basic FHIR validation rules\n"
+          },
+          "404": {
+            "description": "Not Found - resource type not support, or not a FHIR validation rules\n"
+          }
+        },
+        "x-flow": "fhirObservation-postObservation"
+      }
+    },
+    "/_tags": {
+      "get": {
+        "description": "get a list of all tags",
+        "operationId": "GET /_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-getTags"
+      }
+    },
+    "/": {
+      "get": {
+        "description": "Retrieve resource",
+        "operationId": "GET /",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-get"
+      },
+      "post": {
+        "description": "Create a new resource",
+        "operationId": "POST /",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Succesfully created a new resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-post"
+      }
+    },
+    "/Observation/{id}/_tags/_delete": {
+      "post": {
+        "description": "Removes all tags in the provided list of tags for the nominated resource",
+        "operationId": "POST /Observation/{id}/_tags/_delete",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Status 204"
+          }
+        },
+        "x-flow": "fhirObservation-postObservationTagsDeleteById"
+      }
+    },
+    "/Observation/_validate/{id}": {
+      "post": {
+        "description": "Create a new resource",
+        "operationId": "POST /Observation/_validate/{id}",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Validates a type\n"
+          }
+        },
+        "x-flow": "fhirObservation-postObservationValidateById"
+      }
+    },
+    "/Observation/{id}/_history/{vid}/_tags/_delete": {
+      "post": {
+        "description": "Removes all tags in the provided list of tags for the nominated version of the resource",
+        "operationId": "POST /Observation/{id}/_history/{vid}/_tags/_delete",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful deletion of tags"
+          }
+        },
+        "x-flow": "fhirObservation-postObservationHistoryTagsDeleteByIdVid"
+      }
+    },
+    "/Observation/_search": {
+      "get": {
+        "operationId": "GET /Observation/_search",
+        "produces": [
+          "application/atom+xml",
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationSearch"
+      }
+    },
+    "/Observation/{id}/_history": {
+      "get": {
+        "operationId": "GET /Observation/{id}/_history",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationHistoryById"
+      }
+    },
+    "/Observation/{id}/$everything": {
+      "get": {
+        "operationId": "GET /Observation/{id}/$everything",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationEverythingById"
+      }
+    },
+    "/Observation/$validate": {
+      "get": {
+        "operationId": "GET /Observation/$validate",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationValidate"
+      }
+    },
+    "/Observation/{id}/_history/{vid}/_tags": {
+      "get": {
+        "description": "get a list of tags used for the nominated version of the resource.  This duplicates the HTTP header entries.",
+        "operationId": "GET /Observation/{id}/_history/{vid}/_tags",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationHistoryTagsByIdVid"
+      },
+      "post": {
+        "description": "Affix tags in the list to the nominated verion of the resource",
+        "operationId": "POST /Observation/{id}/_history/{vid}/_tags",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Succesfully affix tags\n"
+          }
+        },
+        "x-flow": "fhirObservation-postObservationHistoryTagsByIdVid"
+      }
+    },
+    "/$meta": {
+      "get": {
+        "operationId": "GET /$meta",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved resource(s)\n"
+          }
+        },
+        "x-flow": "fhirObservation-getMeta"
+      }
+    },
+    "/Observation/{id}/$validate": {
+      "get": {
+        "operationId": "GET /Observation/{id}/$validate",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationValidateById"
+      }
+    },
+    "/_history": {
+      "get": {
+        "description": "Whole System History",
+        "operationId": "GET /_history",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Succesfully retrieved resource\n"
+          }
+        },
+        "x-flow": "fhirObservation-getHistory"
+      }
+    },
+    "/Observation/{id}/_history/{vid}": {
+      "get": {
+        "operationId": "GET /Observation/{id}/_history/{vid}",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "vid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationHistoryByIdVid"
+      }
+    },
+    "/Observation/$meta": {
+      "get": {
+        "operationId": "GET /Observation/$meta",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved resource(s)\n"
+          }
+        },
+        "x-flow": "fhirObservation-getObservationMeta"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "API Key": {
+      "description": "API Key",
+      "type": "apiKey",
+      "name": "KeyId",
+      "in": "header"
+    }
+  },
+  "x-axway": {
+    "serviceType": "rest",
+    "image": "/api/portal/v1.3/discovery/swagger/apis/60e39869-cdfa-4be2-93f4-175d278a288b/image",
+    "basePaths": [
+      "https://api-env.demo.axway.com:8065"
+    ],
+    "expired": false,
+    "retirementDate": 0,
+    "corsEnabled": true,
+    "deprecated": false,
+    "availableSDK": {
+      "ios-swift": "/discovery/sdk/60e39869-cdfa-4be2-93f4-175d278a288b/ios-swift",
+      "titanium": "/discovery/sdk/60e39869-cdfa-4be2-93f4-175d278a288b/titanium",
+      "android": "/discovery/sdk/60e39869-cdfa-4be2-93f4-175d278a288b/android",
+      "nodejs": "/discovery/sdk/60e39869-cdfa-4be2-93f4-175d278a288b/nodejs"
+    },
+    "apiResourceType": "swagger20",
+    "id": "60e39869-cdfa-4be2-93f4-175d278a288b",
+    "state": "published",
+    "tags": {
+      "Industry": [
+        "Healthcare"
+      ],
+      "Type": [
+        "Demo_FHIR"
+      ],
+      "Category": [
+        "Clinical",
+        " Diagnostics"
+      ],
+      "Standard": [
+        "FHIR"
+      ]
+    }
+  }
+}

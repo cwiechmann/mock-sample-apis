@@ -1,0 +1,48 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "3.7",
+    "title" : "EMR-System-Physicians",
+    "x-summary" : "Processing electronic health transactions for retrieving physicians availability"
+  },
+  "host" : "api-env.demo.axway.com:8065",
+  "basePath" : "/api/emr/physicians",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "operationId" : "All",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "image" : "/api/portal/v1.3/discovery/swagger/apis/e4bdecea-f8cf-41c6-a343-fc3ec96fcc62/image",
+    "basePaths" : [ "https://api-env.demo.axway.com:8065" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/e4bdecea-f8cf-41c6-a343-fc3ec96fcc62/ios-swift",
+      "titanium" : "/discovery/sdk/e4bdecea-f8cf-41c6-a343-fc3ec96fcc62/titanium",
+      "android" : "/discovery/sdk/e4bdecea-f8cf-41c6-a343-fc3ec96fcc62/android",
+      "nodejs" : "/discovery/sdk/e4bdecea-f8cf-41c6-a343-fc3ec96fcc62/nodejs"
+    },
+    "apiResourceType" : "swagger11ex",
+    "id" : "e4bdecea-f8cf-41c6-a343-fc3ec96fcc62",
+    "state" : "published",
+    "tags" : {
+      "Industry" : [ "Healthcare" ],
+      "Type" : [ "Demo_Amplify_PlexusHealth" ],
+      "Category" : [ "Physician" ]
+    }
+  }
+}

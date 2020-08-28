@@ -1,0 +1,38 @@
+{
+  "name" : "FHIR Location",
+  "path" : "/location",
+  "state" : "published",
+  "version" : "DSTU2",
+  "organization" : "FHIR",
+  "apiDefinition" : "FHIR Location.json",
+  "descriptionType" : "manual",
+  "descriptionManual" : "Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained or accommodated. For more information: https://www.hl7.org/fhir/location.html",
+  "backendBasepath" : "http://192.168.65.1:8280/api/location",
+  "image" : "api-image.jpg",
+  "securityProfiles" : [ {
+    "name" : "_default",
+    "isDefault" : true,
+    "devices" : [ {
+      "name" : "API Key",
+      "type" : "apiKey",
+      "order" : 1,
+      "properties" : {
+        "apiKeyFieldName" : "KeyId",
+        "takeFrom" : "HEADER",
+        "removeCredentialsOnSuccess" : "true"
+      }
+    } ]
+  } ],
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_FHIR" ],
+    "Category" : [ "Identification", " Entities" ],
+    "Standard" : [ "FHIR" ]
+  },
+  "clientOrganizations" : [ "FHIR" ],
+  "applications" : [ {
+    "name" : "FHIR - Everything Health",
+    "enabled" : true,
+    "state" : "approved"
+  } ]
+}

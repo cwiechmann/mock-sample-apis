@@ -1,0 +1,17 @@
+{
+  "name" : "Security-PatientAuth-Service",
+  "path" : "/api/sec/auth/patient",
+  "state" : "published",
+  "version" : "2.2",
+  "organization" : "Plexus Health",
+  "apiDefinition" : "Security-PatientAuth-Service.json",
+  "summary" : "Security service providing patient authentication",
+  "backendBasepath" : "http://192.168.65.1:8280/api/api/sec/auth/patient/",
+  "image" : "api-image.jpg",
+  "tags" : {
+    "Industry" : [ "Healthcare" ],
+    "Type" : [ "Demo_Amplify_PlexusHealth" ],
+    "Category" : [ "Auth", " Security" ]
+  },
+  "clientOrganizations" : [ "Plexus Health" ]
+}
