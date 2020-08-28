@@ -6,7 +6,7 @@
   "organization" : "Plexus Health",
   "apiDefinition" : "HL7-Interface-Module.json",
   "summary" : "HL7 standards module verifications",
-  "backendBasepath" : "http://192.168.65.1:8280/api/api/hl7/module/verif/",
+  "backendBasepath" : "http://${BACKEND_HOST}/api/api/hl7/module/verif/",
   "image" : "api-image.jpg",
   "tags" : {
     "Industry" : [ "Healthcare" ],

@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Appointment.json",
   "descriptionType" : "manual",
   "descriptionManual" : "A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s). For more information: https://www.hl7.org/fhir/appointment.html",
-  "backendBasepath" : "http://192.168.65.1:8280/api/appointment",
+  "backendBasepath" : "http://${BACKEND_HOST}/api/appointment",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

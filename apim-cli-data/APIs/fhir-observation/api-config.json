@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Observation.json",
   "descriptionType" : "manual",
   "descriptionManual" : "Measurements and simple assertions made about a patient, device or other subject. For more information: https://www.hl7.org/fhir/observation.html",
-  "backendBasepath" : "http://192.168.65.1:8280/api/observation",
+  "backendBasepath" : "http://${BACKEND_HOST}/api/observation",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

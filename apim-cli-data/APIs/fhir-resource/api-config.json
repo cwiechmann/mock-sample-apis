@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Resource (Any).json",
   "descriptionType" : "manual",
   "descriptionManual" : "This is a generic API that can invoke any FHIR resource. Parameter is \"type\" and sample values can be Condition, Patient etc.",
-  "backendBasepath" : "http://192.168.65.1:8280/api/fhir",
+  "backendBasepath" : "http://${BACKEND_HOST}/api/fhir",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

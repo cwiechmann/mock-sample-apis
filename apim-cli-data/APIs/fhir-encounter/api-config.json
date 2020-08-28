@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Encounter.json",
   "descriptionType" : "manual",
   "descriptionManual" : "An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient. For more information: https://www.hl7.org/fhir/encounter.html",
-  "backendBasepath" : "http://192.168.65.1:8280/api/encounter",
+  "backendBasepath" : "http://${BACKEND_HOST}/api/encounter",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

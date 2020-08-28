@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR Condition.json",
   "descriptionType" : "manual",
   "descriptionManual" : "Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a diagnosis during an encounter; populating a problem list or a summary statement, such as a discharge summary. For more information: https://www.hl7.org/fhir/condition.html",
-  "backendBasepath" : "http://192.168.65.1:8280/api/condition",
+  "backendBasepath" : "http://${BACKEND_HOST}/api/condition",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",

@@ -7,7 +7,7 @@
   "apiDefinition" : "FHIR CarePlan.json",
   "descriptionType" : "manual",
   "descriptionManual" : "Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions. For more information: https://www.hl7.org/fhir/careplan.html",
-  "backendBasepath" : "http://192.168.65.1:8280/api/careplan",
+  "backendBasepath" : "http://${BACKEND_HOST}/api/careplan",
   "image" : "api-image.jpg",
   "securityProfiles" : [ {
     "name" : "_default",
