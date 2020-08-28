@@ -42,7 +42,7 @@
   },
   "clientOrganizations" : [ "Plexus Health" ],
   "applications" : [ {
-    "name" : "Plexus Suite – Appointment Management",
+    "name" : "Plexus Suite - Appointment Management",
     "enabled" : true,
     "state" : "approved"
   }, {

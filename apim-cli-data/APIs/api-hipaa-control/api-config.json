@@ -15,11 +15,11 @@
   },
   "clientOrganizations" : [ "Plexus Health" ],
   "applications" : [ {
-    "name" : "Plexus Suite – Appointment Management",
+    "name" : "Plexus Suite - Appointment Management",
     "enabled" : true,
     "state" : "approved"
   }, {
-    "name" : "Plexus Suite – Patient Monitoring",
+    "name" : "Plexus Suite - Patient Monitoring",
     "enabled" : true,
     "state" : "approved"
   } ]
