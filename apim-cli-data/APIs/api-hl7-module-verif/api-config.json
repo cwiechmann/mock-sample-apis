@@ -1,29 +1,57 @@
 {
-  "name" : "HL7-Interface-Module",
-  "path" : "/api/hl7/module/verif",
-  "state" : "published",
-  "version" : "2.1",
-  "organization" : "Plexus Health",
-  "apiDefinition" : "HL7-Interface-Module.json",
-  "summary" : "HL7 standards module verifications",
-  "backendBasepath" : "${BACKEND_HOST}/api/api/hl7/module/verif/",
-  "image" : "api-image.jpg",
-  "tags" : {
-    "Industry" : [ "Healthcare" ],
-    "Type" : [ "Demo_Amplify_PlexusHealth" ]
+  "name": "HL7-Interface-Module",
+  "path": "/api/hl7/module/verif",
+  "state": "published",
+  "version": "2.1",
+  "organization": "Plexus Health",
+  "apiDefinition": "HL7-Interface-Module.json",
+  "summary": "HL7 standards module verifications",
+  "backendBasepath": "${BACKEND_HOST}/api/api/hl7/module/verif/",
+  "image": "api-image.jpg",
+  "securityProfiles": [
+    {
+      "name": "_default",
+      "isDefault": true,
+      "devices": [
+        {
+          "name": "HTTP Basic",
+          "type": "basic",
+          "order": 1,
+          "properties": {
+            "realm": "Default",
+            "removeCredentialsOnSuccess": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "tags": {
+    "Industry": ["Healthcare"],
+    "Type": ["Demo_Amplify_PlexusHealth"]
   },
-  "applications" : [ {
-    "name" : "Plexus Suite - Appointment Management",
-    "enabled" : true,
-    "state" : "approved"
-  }, {
-    "name" : "Plexus Suite - Surgery Center",
-    "enabled" : true,
-    "state" : "approved"
-  }, {
-    "name" : "Plexus Suite - Patient Monitoring",
-    "enabled" : true,
-    "state" : "approved"
-  } ],
-  "clientOrganizations" : [ "Plexus Health" ]
+  "applications": [
+    {
+      "name": "Plexus Suite - Appointment Management",
+      "enabled": true,
+      "state": "approved"
+    },
+    {
+      "name": "Plexus Suite - Surgery Center",
+      "enabled": true,
+      "state": "approved"
+    },
+    {},
+    {
+      "name": "Axway Client App",
+      "enabled": true,
+      "state": "approved"
+    },
+    {
+      "name": "Plexus Suite - Patient Monitoring",
+      "enabled": true,
+      "state": "approved"
+    }
+  ],
+
+  "clientOrganizations": ["Plexus Health", "Axway"]
 }
