@@ -1,6 +1,6 @@
 {
   "name" : "FHIR - Everything Health",
-  "organization" : "Plexus Health",
+  "organization" : "Partners",
   "description" : "An application that promotes healthy living.",
   "state" : "approved",
   "enabled" : true,
