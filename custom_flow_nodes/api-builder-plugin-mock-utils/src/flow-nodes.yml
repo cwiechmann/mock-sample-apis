@@ -1,0 +1,60 @@
+flow-nodes:
+  mock-utils:
+    name: API Mockup Utils
+    icon: icon.svg
+    description: Utility flow now used to make mocked API-Calls more realistic. For instance use different return codes or response times.
+    category: general
+    methods:
+      returnCode:
+        name: Random return code
+        description: Returns a random return code, based on the given number of possible codes.
+        parameters:
+          inputCodes:
+            name: Input Codes
+            description: 'An array of possible return codes (e.g. [{"code": "200", "priority": "10"}, {"code": "201", "priority": "5"}, ...]). Return codes given at the beginning are returned more often'
+            required: true
+            initialType: array
+            schema:
+              type: array
+        returns:
+          name: Next
+          description: The randomized return code
+          context: $.returnCode
+          schema:
+            type: number
+        throws:
+          name: Error
+          description: An unexpected error was encountered.
+          context: $.error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+      randomNumber:
+        name: Random time
+        description: Returns a randomly response times based on the given possible response time ranges. 
+        parameters:
+          inputTimes:
+            name: Input Times
+            description: 'An array of possible time ranges (e.g. [{"range": "10-30", "priority": "10"}, {"range": "40-80", "priority": "5"}, ...]). Time ranges given first are returned more frequently.'
+            required: true
+            initialType: array
+            schema:
+              type: array
+        returns:
+          name: Next
+          description: The randomized time
+          context: $.randomTime
+          schema:
+            type: number
+        throws:
+          name: Error
+          description: An unexpected error was encountered.
+          context: $.error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string

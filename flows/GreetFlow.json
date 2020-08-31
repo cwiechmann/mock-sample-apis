@@ -43,7 +43,7 @@
 			"env"
 		]
 	},
-	"start": "condition.1",
+	"start": "mock-utils.1",
 	"nodes": {
 		"response.success": {
 			"type": "nodehandler://axway-flow/http",
@@ -51,17 +51,17 @@
 			"method": "setresponse",
 			"parameters": [
 				{
-					"name": "status",
-					"value": "200",
-					"type": "number",
-					"metaName": "Status",
-					"metaDescription": "The HTTP status code"
-				},
-				{
 					"name": "body",
 					"value": "$.greeting",
 					"metaName": "Body",
 					"metaDescription": "The response payload"
+				},
+				{
+					"name": "status",
+					"type": "jsonpath",
+					"value": "$.returnCode",
+					"metaName": "Status",
+					"metaDescription": "The HTTP status code"
 				}
 			],
 			"outputs": {
@@ -160,6 +160,88 @@
 				}
 			},
 			"metaMethod": "Exists"
+		},
+		"mock-utils.1": {
+			"type": "nodehandler://api-builder-plugin-mock-utils/mock-utils",
+			"name": "Random time",
+			"method": "randomNumber",
+			"parameters": [
+				{
+					"name": "inputTimes",
+					"type": "array",
+					"value": "[\n  {\"range\": \"10-30\", \"priority\": \"10\"}, \n  {\"range\": \"40-80\", \"priority\": \"9\"},\n  {\"range\": \"90-140\", \"priority\": \"8\"},\n  {\"range\": \"140-200\", \"priority\": \"7\"},\n  {\"range\": \"200-800\", \"priority\": \"6\"},\n  {\"range\": \"800-1400\", \"priority\": \"2\"},\n  {\"range\": \"800-9000\", \"priority\": \"2\"}\n]",
+					"metaName": "Input Times",
+					"metaDescription": "An array of possible time ranges (e.g. [{\"range\": \"10-30\", \"priority\": \"10\"}, {\"range\": \"40-80\", \"priority\": \"5\"}, ...]). Time ranges given first are returned more frequently."
+				}
+			],
+			"outputs": {
+				"next": {
+					"routes": [
+						"delay.1"
+					],
+					"context": "$.randomTime",
+					"metaName": "Next"
+				},
+				"error": {
+					"routes": [],
+					"context": "$.error",
+					"metaName": "Error"
+				}
+			},
+			"metaMethod": "Random time"
+		},
+		"delay.1": {
+			"type": "nodehandler://axway-flow/delay",
+			"name": "Delay",
+			"method": "delay",
+			"parameters": [
+				{
+					"name": "delay",
+					"type": "jsonpath",
+					"value": "$.randomTime",
+					"metaName": "Delay",
+					"metaDescription": "The length of delay, in milliseconds."
+				}
+			],
+			"outputs": {
+				"next": {
+					"context": "$.delayed",
+					"routes": [
+						"mock-utils.2"
+					],
+					"metaName": "Next"
+				}
+			},
+			"metaMethod": "Delay"
+		},
+		"mock-utils.2": {
+			"type": "nodehandler://api-builder-plugin-mock-utils/mock-utils",
+			"name": "Random return code",
+			"method": "returnCode",
+			"parameters": [
+				{
+					"name": "inputCodes",
+					"type": "array",
+					"value": "[\n  {\"code\": \"200\", \"priority\": \"10\"}, \n  {\"code\": \"201\", \"priority\": \"5\"},\n  {\"code\": \"403\", \"priority\": \"2\"},\n  {\"code\": \"404\", \"priority\": \"3\"},\n  {\"code\": \"500\", \"priority\": \"1\"},\n  {\"code\": \"504\", \"priority\": \"1\"},\n  {\"code\": \"400\", \"priority\": \"2\"}\n]",
+					"metaName": "Input Codes",
+					"metaDescription": "An array of possible return codes (e.g. [{\"code\": \"200\", \"priority\": \"10\"}, {\"code\": \"201\", \"priority\": \"5\"}, ...]). Return codes given at the beginning are returned more often"
+				}
+			],
+			"outputs": {
+				"next": {
+					"routes": [
+						"condition.1"
+					],
+					"context": "$.returnCode",
+					"metaName": "Next"
+				},
+				"error": {
+					"routes": [],
+					"context": "$.error",
+					"metaName": "Error"
+				}
+			},
+			"metaMethod": "Random return code"
 		}
 	}
 }
