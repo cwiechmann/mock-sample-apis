@@ -31,7 +31,6 @@ describe('Endpoints', function () {
 				auth: auth,
 				json: true
 			}).then(({ response, body }) => {
-				expect(response.statusCode).to.equal(200);
 				expect(body).to.equal(`Howdy ${username}`);
 			});
 		});
