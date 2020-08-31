@@ -17,8 +17,8 @@ apis[11]=GET#/device/Device/_search#KeyId:71b7fe58-e0b3-413a-b1cb-39a185334d06
 apis[12]=GET#/device/Device/_search#KeyId:ba2bde52-9604-4165-95fa-ecd28a3675c0
 apis[13]=GET#/api/greet/greet?username=Chris#KeyId:ba2bde52-9604-4165-95fa-ecd28a3675c0
 apis[14]=GET#/api/greet/greet?username=Axway#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
-apis[15]=GET#/api/greet/greet=Axway#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
-apis[16]=GET#/api/greet/greet?username=Axway#XXXX:6cd55c27-675a-444a-9bc7-ae9a7869184d
+apis[15]=GET#/api/greet/greet?username=Axway#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
+apis[16]=GET#/api/greet/greet?username=Axway#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[17]=GET#/api/emr/surgery#Dummy:Header
 
 while [ true ]
