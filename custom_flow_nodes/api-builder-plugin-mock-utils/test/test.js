@@ -20,7 +20,7 @@ describe('flow-node mock-utils', () => {
 			expect(flowNode).to.be.a('object');
 
 			// Ensure the flow-node matches the spec
-			expect(flowNode.name).to.equal('Mock-UP Utils');
+			expect(flowNode.name).to.equal('API Mockup Utils');
 			expect(flowNode.description).to.equal('Utility flow now used to make mocked API-Calls more realistic. For instance use different return codes or response times.');
 			expect(flowNode.icon).to.be.a('string');
 		});
