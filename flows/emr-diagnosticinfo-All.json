@@ -68,7 +68,7 @@
 				{
 					"name": "inputCodes",
 					"type": "array",
-					"value": "[\n  {\"code\": \"200\", \"priority\": \"10\"}, \n  {\"code\": \"201\", \"priority\": \"5\"},\n  {\"code\": \"403\", \"priority\": \"2\"},\n  {\"code\": \"404\", \"priority\": \"3\"},\n  {\"code\": \"500\", \"priority\": \"1\"},\n  {\"code\": \"504\", \"priority\": \"1\"},\n  {\"code\": \"400\", \"priority\": \"2\"}\n]",
+					"value": "[\n  {\"code\": \"200\", \"priority\": \"15\"}, \n  {\"code\": \"201\", \"priority\": \"15\"},\n  {\"code\": \"403\", \"priority\": \"1\"},\n  {\"code\": \"404\", \"priority\": \"2\"},\n  {\"code\": \"500\", \"priority\": \"1\"},\n  {\"code\": \"504\", \"priority\": \"2\"},\n  {\"code\": \"400\", \"priority\": \"1\"}\n]",
 					"metaName": "Input Codes",
 					"metaDescription": "An array of possible return codes (e.g. [{\"code\": \"200\", \"priority\": \"10\"}, {\"code\": \"201\", \"priority\": \"5\"}, ...]). Return codes given at the beginning are returned more often"
 				}
