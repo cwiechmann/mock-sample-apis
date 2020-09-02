@@ -97,7 +97,7 @@
 				{
 					"name": "inputTimes",
 					"type": "array",
-					"value": "[\n  {\"range\": \"10-30\", \"priority\": \"10\"}, \n  {\"range\": \"40-80\", \"priority\": \"9\"},\n  {\"range\": \"90-140\", \"priority\": \"8\"},\n  {\"range\": \"140-200\", \"priority\": \"7\"},\n  {\"range\": \"200-800\", \"priority\": \"6\"},\n  {\"range\": \"800-1400\", \"priority\": \"2\"},\n  {\"range\": \"800-9000\", \"priority\": \"2\"}\n]\n",
+					"value": "[\n  {\"range\": \"10-30\", \"priority\": \"20\"}, \n  {\"range\": \"40-80\", \"priority\": \"19\"},\n  {\"range\": \"90-140\", \"priority\": \"2\"},\n  {\"range\": \"140-200\", \"priority\": \"1\"},\n  {\"range\": \"200-800\", \"priority\": \"1\"},\n  {\"range\": \"800-1400\", \"priority\": \"1\"},\n  {\"range\": \"800-9000\", \"priority\": \"1\"}\n]\n",
 					"metaName": "Input Times",
 					"metaDescription": "An array of possible time ranges (e.g. [{\"range\": \"10-30\", \"priority\": \"10\"}, {\"range\": \"40-80\", \"priority\": \"5\"}, ...]). Time ranges given first are returned more frequently."
 				}
