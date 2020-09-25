@@ -1,7 +1,7 @@
 #!/bin/sh
 
 currentDir=$PWD
-APIM_CLI_VERSION=1.2.1
+APIM_CLI_VERSION=1.2.3
 CLI_DIR=$currentDir/apim-cli
 
 if [ ! -d "$CLI_DIR/apim-cli-$APIM_CLI_VERSION" ]; then
