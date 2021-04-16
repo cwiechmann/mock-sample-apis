@@ -34,7 +34,7 @@ do
 	echo "Header: $header"
 	echo "Verb: $verb"
 	set -x
-	~/Axway-7.7.0/apigateway/Linux.x86_64/bin/sr -d 5 -w 8 -qq https://localhost:8065${uri} -A "${header}" -v GET
+	sr -d 5 -w 8 -qq https://localhost:8065${uri} -A "${header}" -v GET
 	set +x
 
 done
