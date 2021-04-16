@@ -1,17 +1,9 @@
 #!/bin/sh
 
-if [ ! -f conf/env.properties ]
-then
-  export $(cat conf/env.properties | sed 's/#.*//g' | xargs)
-fi
-
 currentDir=$PWD
+cliData=${currentDir}/../apim-cli-data
 APIM_CLI_VERSION="${APIM_CLI_VERSION:=1.3.6}"
-CLI_DIR=$currentDir/../apim-cli
-BACKEND_HOST="${BACKEND_HOST:=http://localhost:8280}"
-APIMANAGER_HOST="${APIMANAGER_HOST:=localhost}"
-APIMANAGER_USER="${APIMANAGER_USER:=apiadmin}"
-APIMANAGER_PASS="${APIMANAGER_PASS:=changeme}"
+CLI_DIR=$currentDir/apim-cli
 
 if [ ! -d "$CLI_DIR/apim-cli-$APIM_CLI_VERSION" ]; then
     mkdir $CLI_DIR
@@ -20,31 +12,40 @@ fi
 
 CLI=$CLI_DIR/apim-cli-$APIM_CLI_VERSION/scripts/apim.sh
 
+BACKEND_HOST=$1
+
+if [ "$BACKEND_HOST" == "" ]; then
+    echo "Missing BACKEND_HOST. Please call: ${currentDir}/setup-mock-apis.sh \"http://mocked-apis:8280\""
+    exit
+fi
+
 echo "Using backend host: $BACKEND_HOST for API-Mock ups"
+
+export BACKEND_HOST
 
 
 # Import all organizations
-cd $currentDir/apim-cli-data/Organizations
+cd ${cliData}/Organizations
 for orgDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import organization from config: $orgDirectory"
-    $CLI org import -c $currentDir/apim-cli-data/Organizations/$orgDirectory/org-config.json
+    $CLI org import -c ${cliData}/Organizations/$orgDirectory/org-config.json
 done
 
 # Import all applications
-cd $currentDir/apim-cli-data/ClientApps
+cd ${cliData}/ClientApps
 for appDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import applicaton from config directory: $appDirectory"
-    $CLI app import -c $currentDir/apim-cli-data/ClientApps/$appDirectory/application-config.json
+    $CLI app import -c ${cliData}/ClientApps/$appDirectory/application-config.json
 done
 
 # Import all APIs
-cd $currentDir/apim-cli-data/APIs
+cd ${cliData}/APIs
 for apiDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import API from config directory: $apiDirectory"
-    $CLI api import -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json - force
+    $CLI api import -c ${cliData}/APIs/$apiDirectory/api-config.json -force
 done
 
 exit
