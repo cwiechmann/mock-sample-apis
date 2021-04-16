@@ -1,8 +1,13 @@
 #!/bin/sh
 
+if [ ! -f .env ]
+then
+  export $(cat .env | sed 's/#.*//g' | xargs)
+fi
+
 currentDir=$PWD
-APIM_CLI_VERSION=${APIM_CLI_VERSION:=1.3.6}"
-CLI_DIR=$currentDir/apim-cli
+APIM_CLI_VERSION="${APIM_CLI_VERSION:=1.3.6}"
+CLI_DIR=$currentDir/../apim-cli
 BACKEND_HOST="${BACKEND_HOST:=http://localhost:8280}"
 APIMANAGER_HOST="${APIMANAGER_HOST:=localhost}"
 APIMANAGER_USER="${APIMANAGER_USER:=apiadmin}"
@@ -14,10 +19,6 @@ if [ ! -d "$CLI_DIR/apim-cli-$APIM_CLI_VERSION" ]; then
 fi
 
 CLI=$CLI_DIR/apim-cli-$APIM_CLI_VERSION/scripts/apim.sh
-
-export JAVA_HOME=/home/ec2-user/Axway-7.7.0/apigateway/Linux.x86_64/jre
-
-export $ACKEND_HOST
 
 echo "Using backend host: $BACKEND_HOST for API-Mock ups"
 
