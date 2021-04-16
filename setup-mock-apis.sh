@@ -1,8 +1,12 @@
 #!/bin/sh
 
 currentDir=$PWD
-APIM_CLI_VERSION=1.2.3
+APIM_CLI_VERSION=${APIM_CLI_VERSION:=1.3.6}"
 CLI_DIR=$currentDir/apim-cli
+BACKEND_HOST="${BACKEND_HOST:=http://localhost:8280}"
+APIMANAGER_HOST="${APIMANAGER_HOST:=localhost}"
+APIMANAGER_USER="${APIMANAGER_USER:=apiadmin}"
+APIMANAGER_PASS="${APIMANAGER_PASS:=changeme}"
 
 if [ ! -d "$CLI_DIR/apim-cli-$APIM_CLI_VERSION" ]; then
     mkdir $CLI_DIR
@@ -13,7 +17,7 @@ CLI=$CLI_DIR/apim-cli-$APIM_CLI_VERSION/scripts/apim.sh
 
 export JAVA_HOME=/home/ec2-user/Axway-7.7.0/apigateway/Linux.x86_64/jre
 
-export BACKEND_HOST="http://localhost:8280"
+export $ACKEND_HOST
 
 echo "Using backend host: $BACKEND_HOST for API-Mock ups"
 
@@ -23,7 +27,7 @@ cd $currentDir/apim-cli-data/Organizations
 for orgDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import organization from config: $orgDirectory"
-    $CLI org import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/Organizations/$orgDirectory/org-config.json
+    $CLI org import -h $APIMANAGER_HOST -u $APIMANAGER_USER -p $APIMANAGER_PASS -c $currentDir/apim-cli-data/Organizations/$orgDirectory/org-config.json
 done
 
 # Import all applications
@@ -31,7 +35,7 @@ cd $currentDir/apim-cli-data/ClientApps
 for appDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import applicaton from config directory: $appDirectory"
-    $CLI app import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/ClientApps/$appDirectory/application-config.json
+    $CLI app import -h $APIMANAGER_HOST -u $APIMANAGER_USER -p $APIMANAGER_PASS -c $currentDir/apim-cli-data/ClientApps/$appDirectory/application-config.json
 done
 
 # Import all APIs
@@ -39,7 +43,7 @@ cd $currentDir/apim-cli-data/APIs
 for apiDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import API from config directory: $apiDirectory"
-    $CLI api import -h localhost -u apiadmin -p changeme -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json - force
+    $CLI api import -h $APIMANAGER_HOST -u $APIMANAGER_USER -p $APIMANAGER_PASS -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json - force
 done
 
 exit

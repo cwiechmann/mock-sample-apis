@@ -1,0 +1,9 @@
+apiVersion: v2
+name: mock-sample-apis
+description: Deploys an API-Builder container exposing a number of random Mock-APIs. The apim-cli is used to import the belonging APIs into the API-Manager.
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"
