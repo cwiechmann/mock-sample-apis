@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! -f .env ]
+if [ ! -f conf/env.properties ]
 then
-  export $(cat .env | sed 's/#.*//g' | xargs)
+  export $(cat conf/env.properties | sed 's/#.*//g' | xargs)
 fi
 
 currentDir=$PWD
@@ -28,7 +28,7 @@ cd $currentDir/apim-cli-data/Organizations
 for orgDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import organization from config: $orgDirectory"
-    $CLI org import -h $APIMANAGER_HOST -u $APIMANAGER_USER -p $APIMANAGER_PASS -c $currentDir/apim-cli-data/Organizations/$orgDirectory/org-config.json
+    $CLI org import -c $currentDir/apim-cli-data/Organizations/$orgDirectory/org-config.json
 done
 
 # Import all applications
@@ -36,7 +36,7 @@ cd $currentDir/apim-cli-data/ClientApps
 for appDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import applicaton from config directory: $appDirectory"
-    $CLI app import -h $APIMANAGER_HOST -u $APIMANAGER_USER -p $APIMANAGER_PASS -c $currentDir/apim-cli-data/ClientApps/$appDirectory/application-config.json
+    $CLI app import -c $currentDir/apim-cli-data/ClientApps/$appDirectory/application-config.json
 done
 
 # Import all APIs
@@ -44,7 +44,7 @@ cd $currentDir/apim-cli-data/APIs
 for apiDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import API from config directory: $apiDirectory"
-    $CLI api import -h $APIMANAGER_HOST -u $APIMANAGER_USER -p $APIMANAGER_PASS -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json - force
+    $CLI api import -c $currentDir/apim-cli-data/APIs/$apiDirectory/api-config.json - force
 done
 
 exit
