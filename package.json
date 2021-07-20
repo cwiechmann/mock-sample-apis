@@ -2,7 +2,7 @@
 	"name": "mock-sample-apis",
 	"description": "An API Builder service",
 	"main": "app.js",
-	"version": "1.0.0",
+	"version": "0.0.8",
 	"license": "",
 	"keywords": [
 		"api-builder",
@@ -18,18 +18,18 @@
 	"private": true,
 	"dependencies": {
 		"@axway/api-builder-plugin-fn-base64": "^3.0.0",
-		"@axway/api-builder-plugin-fn-javascript": "^2.0.0",
+		"@axway/api-builder-plugin-fn-javascript": "^2.1.1",
 		"@axway/api-builder-plugin-fn-json": "^4.0.1",
-		"@axway/api-builder-plugin-fn-mustache": "^1.0.7",
-		"@axway/api-builder-plugin-fn-restclient": "^2.0.0",
-		"@axway/api-builder-plugin-fn-swagger": "^2.9.2",
-		"@axway/api-builder-runtime": "^4.28.0",
+		"@axway/api-builder-plugin-fn-mustache": "^1.0.8",
+		"@axway/api-builder-plugin-fn-restclient": "^2.0.23",
+		"@axway/api-builder-plugin-fn-swagger": "^2.9.5",
+		"@axway/api-builder-runtime": "^4.67.1",
 		"api-builder-plugin-mock-utils": "file:custom_flow_nodes/api-builder-plugin-mock-utils"
 	},
 	"devDependencies": {
-		"@axway/api-builder-admin": "^1.17.8",
+		"@axway/api-builder-admin": "^1.44.9",
 		"chai": "^4.3.4",
-		"mocha": "^8.3.2"
+		"mocha": "^8.4.0"
 	},
 	"scripts": {
 		"start": "node .",
