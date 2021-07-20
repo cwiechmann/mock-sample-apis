@@ -60,8 +60,8 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: mocked-apis-${{ github.event.release.tag_name }}.tgz
-        asset_name: helm-chart-mocked-apis-${{ github.event.release.tag_name }}.tgz
+        asset_path: mock-sample-apis-${{ github.event.release.tag_name }}.tgz
+        asset_name: helm-chart-mock-sample-apis-${{ github.event.release.tag_name }}.tgz
         asset_content_type: application/gzip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
