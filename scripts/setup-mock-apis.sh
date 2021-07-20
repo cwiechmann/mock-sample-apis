@@ -1,8 +1,8 @@
 #!/bin/sh
 
 currentDir=$PWD
-cliData=${currentDir}/../apim-cli-data
-APIM_CLI_VERSION="${APIM_CLI_VERSION:=1.3.6}"
+cliData=${currentDir}/apim-cli-data
+APIM_CLI_VERSION="${APIM_CLI_VERSION:=1.3.10}"
 CLI_DIR=$currentDir/apim-cli
 
 if [ ! -d "$CLI_DIR/apim-cli-$APIM_CLI_VERSION" ]; then
@@ -12,10 +12,11 @@ fi
 
 CLI=$CLI_DIR/apim-cli-$APIM_CLI_VERSION/scripts/apim.sh
 
-BACKEND_HOST=$1
+APIM_CLI_STAGE=$1
+BACKEND_HOST=$2
 
-if [ "$BACKEND_HOST" == "" ]; then
-    echo "Missing BACKEND_HOST. Please call: ${currentDir}/setup-mock-apis.sh \"http://mocked-apis:8280\""
+if [ "$APIM_CLI_STAGE" == "" -o "$BACKEND_HOST" == "" ]; then
+    echo "Missing APIM_CLI_STAGE. For example please call: ${currentDir}/setup-mock-apis.sh api-env \"http://mocked-apis:8280\""
     exit
 fi
 
@@ -25,27 +26,27 @@ export BACKEND_HOST
 
 
 # Import all organizations
-cd ${cliData}/Organizations
+cd ${cliData}/Organizations || exit 99;
 for orgDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import organization from config: $orgDirectory"
-    $CLI org import -c ${cliData}/Organizations/$orgDirectory/org-config.json
+    $CLI org import -s ${APIM_CLI_STAGE} -c ${cliData}/Organizations/$orgDirectory/org-config.json
 done
 
 # Import all applications
-cd ${cliData}/ClientApps
+cd ${cliData}/ClientApps || exit 99;
 for appDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import applicaton from config directory: $appDirectory"
-    $CLI app import -c ${cliData}/ClientApps/$appDirectory/application-config.json
+    $CLI app import -s ${APIM_CLI_STAGE} -c ${cliData}/ClientApps/$appDirectory/application-config.json
 done
 
 # Import all APIs
-cd ${cliData}/APIs
+cd ${cliData}/APIs || exit 99;
 for apiDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import API from config directory: $apiDirectory"
-    $CLI api import -c ${cliData}/APIs/$apiDirectory/api-config.json -force
+    $CLI api import -s ${APIM_CLI_STAGE} -c ${cliData}/APIs/$apiDirectory/api-config.json -force
 done
 
 exit

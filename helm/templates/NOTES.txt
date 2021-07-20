@@ -1,4 +1,10 @@
-1. In order to import the APIs, run the APIM-CLI
-./scripts/setup-mock-apis.sh "http://mocked-apis:8280"
-2. Call the sample APIs
-./scripts/callAPIs.sh
+1. Clone the project to a Unix-Environment having an API-Gateway installed
+git clone https://github.com/cwiechmann/mock-sample-apis.git
+e.g. use the API-Managemenent reference environment
+
+2. Import the sample APIs
+./scripts/setup-mock-apis.sh api-env "http://mocked-apis:8280"
+After the first run, create an environment file in the APIM-CLI conf directory and run it again
+
+2. Finally Call the sample APIs
+./scripts/callAPIs.sh "/opt/Axway/APIM/apigateway" "https://traffic.axway-amplify-central.com"
