@@ -4,11 +4,11 @@ APIGATEWAY_HOME=$1
 API_TRAFFIC_URL=$2
 
 if [ "$APIGATEWAY_HOME" == "" -o "$API_TRAFFIC_URL" == "" ]; then
-    echo "Missing APIGATEWAY_HOME. For example please call: ./scripts/callAPI.sh \"/opt/Axway/APIM/apigateway\" \"https://traffic.axway-amplify-central.com\""
+    echo "Missing APIGATEWAY_HOME. For example please call: ./scripts/callAPI.sh \"/opt/Axway/apigateway\" \"https://traffic.axway-amplify-central.com\""
     exit
 fi
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APIGATEWAY_HOME}/Axway-7.7.0/apigateway/Linux.x86_64/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${APIGATEWAY_HOME}/Linux.x86_64/lib
 
 apis[0]=GET#/petstore/v2/pet/findByStatus?status=pending#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
 apis[1]=GET#/petstore/v2/pet/findByStatus?status=sold#KeyId:6cd55c27-675a-444a-9bc7-ae9a7869184d
