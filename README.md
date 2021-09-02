@@ -9,5 +9,5 @@ helm install -n apim mocked-apis https://github.com/cwiechmann/mock-sample-apis/
 
 Call the APIs in the background:
 ```
-nohup ./callAPI.sh /opt/Axway/apigateway https://traffic.axway-amplify-central.com >/dev/null 2>&1 &
+nohup ./callAPIs.sh /opt/Axway/apigateway https://traffic.axway-amplify-central.com >/dev/null 2>&1 &
 ```
