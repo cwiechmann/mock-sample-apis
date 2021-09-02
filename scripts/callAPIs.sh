@@ -4,7 +4,7 @@ APIGATEWAY_HOME=$1
 API_TRAFFIC_URL=$2
 
 if [ "$APIGATEWAY_HOME" == "" -o "$API_TRAFFIC_URL" == "" ]; then
-    echo "Missing APIGATEWAY_HOME. For example please call: ./scripts/callAPI.sh \"/opt/Axway/apigateway\" \"https://traffic.axway-amplify-central.com\""
+    echo "Missing APIGATEWAY_HOME. For example please call: ./scripts/callAPIs.sh \"/opt/Axway/apigateway\" \"https://traffic.axway-amplify-central.com\""
     exit
 fi
 
