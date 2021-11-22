@@ -2,7 +2,7 @@
 
 currentDir=$PWD
 cliData=${currentDir}/apim-cli-data
-APIM_CLI_VERSION="${APIM_CLI_VERSION:=1.3.10}"
+APIM_CLI_VERSION="${APIM_CLI_VERSION:=1.4.0}"
 CLI_DIR=$currentDir/apim-cli
 
 if [ ! -d "$CLI_DIR/apim-cli-$APIM_CLI_VERSION" ]; then
