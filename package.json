@@ -24,12 +24,13 @@
 		"@axway/api-builder-plugin-fn-restclient": "^2.0.23",
 		"@axway/api-builder-plugin-fn-swagger": "^2.9.5",
 		"@axway/api-builder-runtime": "^4.67.1",
+		"elastic-apm-node": "^3.25.0",
 		"api-builder-plugin-mock-utils": "file:custom_flow_nodes/api-builder-plugin-mock-utils"
 	},
 	"devDependencies": {
 		"@axway/api-builder-admin": "^1.44.9",
 		"chai": "^4.3.4",
-		"mocha": "^8.4.0"
+		"mocha": "^9.1.3"
 	},
 	"scripts": {
 		"start": "node .",
