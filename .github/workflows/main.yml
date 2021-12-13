@@ -26,13 +26,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Check certificates
+        uses: Axway-API-Management-Plus/apim-cli-github-action@v1.5.1
+        with:
+          apimHostname: ${{ github.event.inputs.apimHost }}
+          apimUsername: ${{ github.event.inputs.apimUsername }}
+          apimPassword: ${{ github.event.inputs.apimPassword }}
+          apimCLICommand: 'api check-certs'
+          apimExtraArgs: '-days 60'
       - name: Import Organizations
         uses: Axway-API-Management-Plus/apim-cli-github-action@v1.5.1
         with:
           apimHostname: ${{ github.event.inputs.apimHost }}
           apimUsername: ${{ github.event.inputs.apimUsername }}
           apimPassword: ${{ github.event.inputs.apimPassword }}
-          apimCLIVersion: 1.5.0
           apimExtraArgs: '-port ${{ github.event.inputs.apimPort }} -force -returnCodeMapping 10:0'
           orgDirectory: 'apim-cli-data/Organizations'
         env:
