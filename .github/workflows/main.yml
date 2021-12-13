@@ -30,6 +30,7 @@ jobs:
         uses: Axway-API-Management-Plus/apim-cli-github-action@v1.5.1
         with:
           apimHostname: ${{ github.event.inputs.apimHost }}
+          apimPort: "443"
           apimUsername: ${{ github.event.inputs.apimUsername }}
           apimPassword: ${{ github.event.inputs.apimPassword }}
           apimCLICommand: 'api check-certs'
@@ -38,6 +39,7 @@ jobs:
         uses: Axway-API-Management-Plus/apim-cli-github-action@v1.5.1
         with:
           apimHostname: ${{ github.event.inputs.apimHost }}
+          apimPort: "443"
           apimUsername: ${{ github.event.inputs.apimUsername }}
           apimPassword: ${{ github.event.inputs.apimPassword }}
           apimExtraArgs: '-port ${{ github.event.inputs.apimPort }} -force -returnCodeMapping 10:0'
