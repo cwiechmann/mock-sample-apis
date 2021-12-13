@@ -41,7 +41,7 @@ jobs:
           apimUsername: ${{ github.event.inputs.apimUsername }}
           apimPassword: ${{ github.event.inputs.apimPassword }}
           apimExtraArgs: '-port ${{ github.event.inputs.apimPort }} -force -returnCodeMapping 10:0'
-          orgDirectory: 'apim-cli-data/ClientApps'
+          appDirectory: 'apim-cli-data/ClientApps'
       - name: Import APIs
         uses: Axway-API-Management-Plus/apim-cli-github-action@v1.5.1
         with:
@@ -50,7 +50,7 @@ jobs:
           apimUsername: ${{ github.event.inputs.apimUsername }}
           apimPassword: ${{ github.event.inputs.apimPassword }}
           apimExtraArgs: '-port ${{ github.event.inputs.apimPort }} -force -returnCodeMapping 10:0'
-          orgDirectory: 'apim-cli-data/APIs'
+          apiDirectory: 'apim-cli-data/APIs'
         env:
           BACKEND_HOST: 'http://mocked-apis:8280'
 
