@@ -8,6 +8,10 @@
   "summary" : "Processing electronic healthcare transactions for retrieving patient records",
   "backendBasepath" : "${BACKEND_HOST}/api/api/emr/patient",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Type" : [ "Demo_Amplify_PlexusHealth" ],

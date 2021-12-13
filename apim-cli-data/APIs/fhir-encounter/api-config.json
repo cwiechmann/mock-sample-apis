@@ -9,6 +9,10 @@
   "descriptionManual" : "An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient. For more information: https://www.hl7.org/fhir/encounter.html",
   "backendBasepath" : "${BACKEND_HOST}/api/encounter",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

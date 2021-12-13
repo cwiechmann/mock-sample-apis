@@ -8,6 +8,10 @@
   "summary": "HL7 standards module verifications",
   "backendBasepath": "${BACKEND_HOST}/api/api/hl7/module/verif/",
   "image": "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles": [
     {
       "name": "_default",

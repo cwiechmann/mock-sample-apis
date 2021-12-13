@@ -8,6 +8,10 @@
   "summary" : "Processing electronic health transactions for retrieving physicians availability",
   "backendBasepath" : "${BACKEND_HOST}/api/api/emr/physicians/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Type" : [ "Demo_Amplify_PlexusHealth" ],

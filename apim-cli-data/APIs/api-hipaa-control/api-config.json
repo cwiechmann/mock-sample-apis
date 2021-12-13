@@ -8,6 +8,10 @@
   "summary" : "Provides secure electronic access to health data and to remain in compliance with privacy regulations set by HHS (encryption, multi factor authentication, …)",
   "backendBasepath" : "${BACKEND_HOST}/api/api/hipaa/control/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Type" : [ "Demo_Amplify_PlexusHealth" ],

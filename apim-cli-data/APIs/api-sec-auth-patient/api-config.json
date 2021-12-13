@@ -8,6 +8,10 @@
   "summary" : "Security service providing patient authentication",
   "backendBasepath" : "${BACKEND_HOST}/api/api/sec/auth/patient/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Type" : [ "Demo_Amplify_PlexusHealth" ],

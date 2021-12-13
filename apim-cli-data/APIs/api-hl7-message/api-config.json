@@ -8,6 +8,10 @@
   "summary" : "Manage message standards for transfer of clinical and administrative data between software applications used by various healthcare providers",
   "backendBasepath" : "${BACKEND_HOST}/api/api/hl7/message/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Type" : [ "Demo_Amplify_PlexusHealth" ]

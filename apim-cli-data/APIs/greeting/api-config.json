@@ -29,6 +29,10 @@
       }
     } ]
   } ],
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "applications" : [ {
     "name" : "Client App",
     "enabled" : true,

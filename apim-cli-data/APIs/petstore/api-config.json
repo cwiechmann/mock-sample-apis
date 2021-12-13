@@ -6,6 +6,10 @@
   "organization" : "API Development",
   "apiDefinition" : "Petstore.json",
   "backendBasepath" : "${BACKEND_HOST}/api/v2",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

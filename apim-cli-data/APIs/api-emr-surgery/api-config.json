@@ -8,6 +8,10 @@
   "summary" : "Processing electronic healthcare transactions for retrieving surgery availabilities",
   "backendBasepath" : "${BACKEND_HOST}/api/api/emr/surgery/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Type" : [ "Demo_Amplify_PlexusHealth" ],

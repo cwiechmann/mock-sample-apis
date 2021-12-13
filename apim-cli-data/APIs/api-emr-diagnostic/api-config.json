@@ -8,6 +8,10 @@
   "summary" : "Processes submitted patient diagnostics data",
   "backendBasepath" : "${BACKEND_HOST}/api/api/emr/diagnostic/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Type" : [ "Demo_Amplify_PlexusHealth" ],

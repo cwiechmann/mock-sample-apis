@@ -8,6 +8,10 @@
   "summary" : "Processing electronic health transactions for managing admissions",
   "backendBasepath" : "${BACKEND_HOST}/api/api/erm/admission/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

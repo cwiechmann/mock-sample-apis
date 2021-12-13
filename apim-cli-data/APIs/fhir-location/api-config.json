@@ -9,6 +9,10 @@
   "descriptionManual" : "Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained or accommodated. For more information: https://www.hl7.org/fhir/location.html",
   "backendBasepath" : "${BACKEND_HOST}/api/location",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

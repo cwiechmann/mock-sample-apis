@@ -9,6 +9,10 @@
   "descriptionManual" : "An action that is or was performed on a patient. This can be a physical intervention like an operation, or less invasive like counseling or hypnotherapy. For more information: https://www.hl7.org/fhir/procedure.html",
   "backendBasepath" : "${BACKEND_HOST}/api/procedure",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

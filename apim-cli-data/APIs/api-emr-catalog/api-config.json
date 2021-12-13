@@ -8,6 +8,10 @@
   "summary" : "Processes health data for patient symptom recommendation",
   "backendBasepath" : "${BACKEND_HOST}/api/api/emr/catalog/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

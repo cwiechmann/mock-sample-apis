@@ -9,6 +9,10 @@
   "descriptionManual" : "This is a generic API that can invoke any FHIR resource. Parameter is \"type\" and sample values can be Condition, Patient etc.",
   "backendBasepath" : "${BACKEND_HOST}/api/fhir",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

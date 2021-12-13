@@ -9,6 +9,10 @@
   "descriptionManual" : "A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action. Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc. For more infomation: https://www.hl7.org/fhir/organization.html",
   "backendBasepath" : "${BACKEND_HOST}/api/organization",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,

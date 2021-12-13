@@ -8,6 +8,10 @@
   "summary" : "Datasource access to HL7 messages",
   "backendBasepath" : "${BACKEND_HOST}/api/api/hl7/db/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "tags" : {
     "Industry" : [ "Healthcare" ],
     "Category" : [ "Demo_Amplify_PlexusHealth" ]

@@ -8,6 +8,10 @@
   "summary" : "Validate patient insurance",
   "backendBasepath" : "${BACKEND_HOST}/api/api/ins/check/",
   "image" : "api-image.jpg",
+  "customProperties": {
+    "securityLevel": "public",
+    "publicAPI": "true"
+  },
   "securityProfiles" : [ {
     "name" : "_default",
     "isDefault" : true,
