@@ -33,6 +33,6 @@ jobs:
           apimUsername: ${{ github.event.inputs.apimUsername }}
           apimPassword: ${{ github.event.inputs.apimPassword }}
           apimExtraArgs: '-port ${{ github.event.inputs.apimPort }} -force -returnCodeMapping 10:0'
-          apiDirectory: 'apim-cli-data/Organizations'
+          orgDirectory: 'apim-cli-data/Organizations'
         env:
           BACKEND_HOST: 'http://mocked-apis:8280'
