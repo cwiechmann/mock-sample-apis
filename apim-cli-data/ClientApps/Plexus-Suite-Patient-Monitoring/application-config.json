@@ -10,6 +10,9 @@
     "corsOrigins" : [ "*" ],
     "apiKey" : "47b01f8e-c955-4aec-a426-9824086e46dc"
   } ],
+  "customProperties": {
+    "publicApp": "true"
+  },
   "apis" : [ {
     "state" : "approved",
     "apiName" : "Security-HIPAA-Control",

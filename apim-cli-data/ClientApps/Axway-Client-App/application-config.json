@@ -11,6 +11,9 @@
       "apiKey": "ba2bde52-9604-4165-95fa-ecd28a3675c0"
     }
   ],
+  "customProperties": {
+    "publicApp": "true"
+  },
   "apis": [
     {
       "state": "approved",

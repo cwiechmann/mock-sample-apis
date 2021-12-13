@@ -16,5 +16,8 @@
     "secret" : "ed4cb346-5b7c-48ca-a1d1-948ba86c2e78",
     "corsOrigins" : [ "*" ],
     "apiKey" : "93ff2c6d-a257-4c73-93ea-ab1be8e55b43"
-  } ]
+  } ],
+  "customProperties": {
+    "publicApp": "true"
+  }
 }

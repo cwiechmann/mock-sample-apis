@@ -4,6 +4,9 @@
   "description" : "Physician app allowing to manage and follow-up on patient appointments",
   "state" : "approved",
   "enabled" : true,
+  "customProperties": {
+    "publicApp": "true"
+  },
   "apis" : [ {
     "state" : "approved",
     "apiName" : "EMR-DiagnosticInfo",

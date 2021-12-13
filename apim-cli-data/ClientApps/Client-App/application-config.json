@@ -20,6 +20,9 @@
     "corsOrigins" : [ "*" ],
     "apiKey" : "6cd55c27-675a-444a-9bc7-ae9a7869184d"
   } ],
+  "customProperties": {
+    "publicApp": "true"
+  },
   "apis" : [ {
     "state" : "approved",
     "apiName" : "Petstore",

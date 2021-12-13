@@ -4,6 +4,9 @@
   "description" : "Physician app providing patient surgery tools and equipment management",
   "state" : "approved",
   "enabled" : true,
+  "customProperties": {
+    "publicApp": "true"
+  },
   "apis" : [ {
     "state" : "approved",
     "apiName" : "HL7-Interface-Module",
