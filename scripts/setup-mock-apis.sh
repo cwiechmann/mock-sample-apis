@@ -29,7 +29,7 @@ cd ${cliData}/Organizations || exit 99;
 for orgDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import organization from config: $orgDirectory"
-    $CLI org import "${APIM_CLI_OPTIONS}" -c ${cliData}/Organizations/$orgDirectory/org-config.json
+    $CLI org import ${APIM_CLI_OPTIONS} -c ${cliData}/Organizations/$orgDirectory/org-config.json
 done
 
 # Import all applications
@@ -37,7 +37,7 @@ cd ${cliData}/ClientApps || exit 99;
 for appDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import applicaton from config directory: $appDirectory"
-    $CLI app import "${APIM_CLI_OPTIONS}" -c ${cliData}/ClientApps/$appDirectory/application-config.json
+    $CLI app import ${APIM_CLI_OPTIONS} -c ${cliData}/ClientApps/$appDirectory/application-config.json
 done
 
 # Import all APIs
@@ -45,7 +45,7 @@ cd ${cliData}/APIs || exit 99;
 for apiDirectory in `find . -mindepth 1 -type d`
 do
     echo "Import API from config directory: $apiDirectory"
-    $CLI api import "${APIM_CLI_OPTIONS}" -c ${cliData}/APIs/$apiDirectory/api-config.json -force
+    $CLI api import ${APIM_CLI_OPTIONS} -c ${cliData}/APIs/$apiDirectory/api-config.json -force
 done
 
 exit
