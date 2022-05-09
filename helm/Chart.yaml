@@ -4,6 +4,6 @@ description: Deploys an API-Builder container exposing a number of random Mock-A
 
 type: application
 
-version: 0.0.8
+version: 0.0.11
 
-appVersion: "0.0.8"
+appVersion: "0.0.11"
