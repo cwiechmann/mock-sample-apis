@@ -2,7 +2,7 @@ version: '3.7'
 services:
   mocked-apis:
     container_name: mocked-apis
-    image: cwiechmann/api-mockup:v0.0.10
+    image: cwiechmann/api-mockup:v0.0.11
     ports:
       - 8280:8280
     logging:
